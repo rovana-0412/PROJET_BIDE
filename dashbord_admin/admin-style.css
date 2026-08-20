@@ -1,0 +1,223 @@
+/* ==========================================
+   1. VARIABLES & REINITIALISATION GLOBAL
+========================================== */
+:root {
+  --bg-cream: #F8F6F0;
+  --bg-sidebar: #0f1115;
+  --brand-red: #FF4D2E;
+  --brand-red-hover: #E03E22;
+  --text-dark: #1A1A1A;
+  --text-muted: #6C757D;
+  --border-color: #E2E8F0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Scaffolding Layout */
+.id-wrapper {
+  min-height: 100vh;
+}
+
+/* ==========================================
+   2. SIDEBAR / MENU LATERAL
+========================================== */
+.admin-sidebar {
+  width: 280px;
+  background-color: var(--bg-sidebar);
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 2px;
+}
+
+.admin-logo-img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+/* Menu Nav */
+.admin-sidebar .nav-link {
+  color: #9CA3AF;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.admin-sidebar .nav-link:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.admin-sidebar .nav-link.active {
+  color: #FFFFFF;
+  background-color: var(--brand-red);
+}
+
+.admin-sidebar .nav-link i {
+  font-size: 1.1rem;
+}
+
+.admin-avatar {
+  width: 36px;
+  height: 36px;
+  background-color: var(--brand-red);
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   3. CONTENU PRINCIPAL & SECTIONS
+========================================== */
+.admin-content {
+  background-color: var(--bg-cream);
+  min-width: 0; /* Anti-overflow flexbox */
+}
+
+.tagline-red {
+  color: var(--brand-red);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Gestion des Onglets */
+.admin-tab-section {
+  display: none;
+}
+
+.admin-tab-section.active {
+  display: block;
+}
+
+/* Cartes KPI / Stats */
+.stat-card {
+  border-radius: 4px;
+  border-color: var(--border-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Cards Grille Réseau Togo */
+.admin-station-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.admin-station-card:hover {
+  border-color: var(--brand-red);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================
+   4. BOUTONS & FORMULAIRES
+========================================== */
+.btn-red {
+  background-color: var(--brand-red);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-red:hover {
+  background-color: var(--brand-red-hover);
+  color: #FFFFFF;
+}
+
+.hover-red:hover {
+  color: var(--brand-red) !important;
+}
+
+/* ==========================================
+   5. BOUTONS D'ACTION EN TABLEAU (EDIT/DELETE)
+========================================== */
+#gestionnairesTable td .btn-group .btn {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+  border-color: var(--border-color) !important;
+}
+
+/* Survol du bouton Modifier (Bleu) */
+#gestionnairesTable td .btn-group .btn-light.text-primary:hover {
+  background-color: #0d6efd !important;
+  color: #ffffff !important;
+  border-color: #0d6efd !important;
+}
+
+/* Survol du bouton Supprimer (Rouge) */
+#gestionnairesTable td .btn-group .btn-light.text-danger:hover {
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+  border-color: #dc3545 !important;
+}
+
+/* ==========================================
+   6. FENÊTRES MODALES (ÉDITION, MUTATION, DELETE)
+========================================== */
+.modal-content {
+  border-radius: 6px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content .form-control,
+.modal-content .form-select {
+  border: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.modal-content .form-control:focus, 
+.modal-content .form-select:focus {
+  border-color: var(--brand-red);
+  box-shadow: 0 0 0 0.25rem rgba(255, 77, 46, 0.15);
+}
+
+/* Responsiveness */
+@media (max-width: 991.98px) {
+  .id-wrapper {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    min-height: auto;
+    position: relative;
+  }
+}

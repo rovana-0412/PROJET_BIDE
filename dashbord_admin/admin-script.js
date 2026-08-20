@@ -1,5 +1,5 @@
-// Data initiale des 5 Régions et 25 Villes du Togo
-let togoNetworkData = {
+// Données initiales par défaut du Réseau Togo
+const defaultTogoNetworkData = {
   maritime: {
     name: "Maritime",
     stations: [
@@ -52,6 +52,23 @@ let togoNetworkData = {
   }
 };
 
+let togoNetworkData = {};
+
+// Gestion de la mémoire locale (Persistance)
+function loadFromStorage() {
+  const savedData = localStorage.getItem('togoNetworkData');
+  if (savedData) {
+    togoNetworkData = JSON.parse(savedData);
+  } else {
+    togoNetworkData = JSON.parse(JSON.stringify(defaultTogoNetworkData));
+    saveToStorage();
+  }
+}
+
+function saveToStorage() {
+  localStorage.setItem('togoNetworkData', JSON.stringify(togoNetworkData));
+}
+
 const mockClients = [
   { id: 1, nom: "Kossi Lawson", email: "kossi@gmail.com", tel: "+228 90 12 34 56", region: "Maritime", date: "18/08/2026" },
   { id: 2, nom: "Abla Tossou", email: "abla.t@yahoo.fr", tel: "+228 91 88 77 66", region: "Plateaux", date: "17/08/2026" },
@@ -71,7 +88,7 @@ const mockDemandes = [
 
 let gestToDelete = null;
 
-// Navigation Onglets
+// Navigation
 document.querySelectorAll('#adminMenu .nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -101,7 +118,7 @@ function switchSection(sectionKey) {
   }
 }
 
-// Rendus des données
+// Rendus des Tableaux
 function renderDashboardData() {
   document.getElementById('kpiClients').textContent = mockClients.length;
   document.getElementById('badgeClients').textContent = mockClients.length;
@@ -141,7 +158,6 @@ function renderDashboardData() {
   document.getElementById('kpiGestionnaires').textContent = totalGest;
   document.getElementById('gestionnairesTable').innerHTML = gestRows;
 
-  // Demandes
   document.getElementById('recentDemandesTable').innerHTML = mockDemandes.map(d => `
     <tr>
       <td class="fw-bold">${d.client}</td>
@@ -155,7 +171,6 @@ function renderDashboardData() {
     </tr>
   `).join('');
 
-  // Pending
   document.getElementById('pendingGestList').innerHTML = mockPendingGest.map(g => `
     <div class="p-3 bg-light border-start border-3 border-danger d-flex justify-content-between align-items-center">
       <div>
@@ -166,7 +181,6 @@ function renderDashboardData() {
     </div>
   `).join('');
 
-  // Clients
   document.getElementById('clientsTable').innerHTML = mockClients.map(c => `
     <tr>
       <td class="fw-bold">${c.nom}</td>
@@ -178,7 +192,6 @@ function renderDashboardData() {
     </tr>
   `).join('');
 
-  // All demandes
   document.getElementById('allDemandesTable').innerHTML = mockDemandes.map(d => `
     <tr>
       <td><code>${d.id}</code></td>
@@ -220,9 +233,7 @@ function renderStationsGrid(filter = "toutes") {
   });
 }
 
-// --------------------------------------------------
-// GESTION DU MODAL D'ÉDITION ET MUTATION
-// --------------------------------------------------
+// Modification & Mutation
 function ouvrirEditModal(regionKey, gestId) {
   const station = togoNetworkData[regionKey].stations.find(s => s.id === gestId);
   if (!station) return;
@@ -260,7 +271,6 @@ document.getElementById('editSelectRegion').addEventListener('change', (e) => {
   updateEditVilles(e.target.value);
 });
 
-// Soumission du formulaire d'édition / mutation
 document.getElementById('formEditGestionnaire').addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -272,7 +282,6 @@ document.getElementById('formEditGestionnaire').addEventListener('submit', (e) =
   const newPhone = document.getElementById('editPhone').value;
   const newStatut = document.getElementById('editStatut').value;
 
-  // Récupérer et retirer l'ancien gestionnaire
   let currentGest = null;
   const oldStationIndex = togoNetworkData[oldRegionKey].stations.findIndex(s => s.id === gestId);
   if (oldStationIndex !== -1) {
@@ -280,32 +289,28 @@ document.getElementById('formEditGestionnaire').addEventListener('submit', (e) =
     togoNetworkData[oldRegionKey].stations.splice(oldStationIndex, 1);
   }
 
-  // Appliquer les nouvelles infos
   currentGest.manager = newNom;
   currentGest.phone = newPhone;
   currentGest.statut = newStatut;
 
-  // Si réaffectation dans une nouvelle station
   const targetStation = togoNetworkData[newRegionKey].stations.find(s => s.station === newStationName);
   if (targetStation) {
     targetStation.manager = newNom;
     targetStation.phone = newPhone;
     targetStation.statut = newStatut;
   } else {
-    // Si la station n'existait pas encore, on la rajoute
     currentGest.station = newStationName;
     togoNetworkData[newRegionKey].stations.push(currentGest);
   }
 
+  saveToStorage();
   bootstrap.Modal.getInstance(document.getElementById('modalEditGestionnaire')).hide();
   renderDashboardData();
   renderStationsGrid();
   alert('Gestionnaire et affectation mis à jour avec succès !');
 });
 
-// --------------------------------------------------
-// GESTION DU MODAL DE SUPPRESSION
-// --------------------------------------------------
+// Suppression
 function ouvrirDeleteModal(regionKey, gestId, gestName) {
   gestToDelete = { regionKey, gestId };
   document.getElementById('deleteGestName').textContent = gestName;
@@ -321,13 +326,14 @@ document.getElementById('btnConfirmDelete').addEventListener('click', () => {
       togoNetworkData[regionKey].stations.splice(idx, 1);
     }
     gestToDelete = null;
+    saveToStorage();
     bootstrap.Modal.getInstance(document.getElementById('modalDeleteGestionnaire')).hide();
     renderDashboardData();
     renderStationsGrid();
   }
 });
 
-// Modal Ajout Dynamique
+// Ajout
 document.getElementById('modalSelectRegion').addEventListener('change', (e) => {
   updateModalVilles(e.target.value);
 });
@@ -356,18 +362,20 @@ document.getElementById('formAddGestionnaire').addEventListener('submit', (e) =>
     targetStation.statut = "Actif";
   }
 
+  saveToStorage();
   bootstrap.Modal.getInstance(document.getElementById('modalAddGestionnaire')).hide();
   renderDashboardData();
   renderStationsGrid();
   alert('Gestionnaire ajouté et affecté avec succès !');
 });
 
-// Filtre
+// Filtres
 document.getElementById('adminFilterRegion').addEventListener('change', (e) => {
   renderStationsGrid(e.target.value);
 });
 
-// Init
+// Initialisation
+loadFromStorage();
 renderStationsGrid();
 renderDashboardData();
 updateModalVilles('maritime');

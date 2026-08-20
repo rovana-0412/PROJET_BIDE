@@ -25,7 +25,7 @@ body {
 }
 
 /* ==========================================
-   2. SIDEBAR / MENU LATERAL
+   2. SIDEBAR / MENU LATERAL & LOGO
 ========================================== */
 .admin-sidebar {
   width: 280px;
@@ -36,25 +36,49 @@ body {
   z-index: 1000;
 }
 
+/* Container global de la marque dans le menu */
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px;
+}
+
+/* Dimension et style de l'image logo */
+.brand-logo-img {
+  width: 80px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #ffffff;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+/* Bloc contenant le Nom et le Sous-titre */
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1;
+}
+
+/* Style du nom "Bidè" */
 .brand-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: #FFFFFF;
-  line-height: 1;
+  letter-spacing: -0.3px;
 }
 
+/* Style du sous-titre "AKIMMAKO AUTO SERVICES" */
 .brand-subtitle {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  display: block;
+  color: var(--brand-red);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   margin-top: 2px;
-}
-
-.admin-logo-img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
 }
 
 /* Menu Nav */
@@ -98,7 +122,7 @@ body {
 ========================================== */
 .admin-content {
   background-color: var(--bg-cream);
-  min-width: 0; /* Anti-overflow flexbox */
+  min-width: 0;
 }
 
 .tagline-red {
@@ -176,14 +200,12 @@ body {
   border-color: var(--border-color) !important;
 }
 
-/* Survol du bouton Modifier (Bleu) */
 #gestionnairesTable td .btn-group .btn-light.text-primary:hover {
   background-color: #0d6efd !important;
   color: #ffffff !important;
   border-color: #0d6efd !important;
 }
 
-/* Survol du bouton Supprimer (Rouge) */
 #gestionnairesTable td .btn-group .btn-light.text-danger:hover {
   background-color: #dc3545 !important;
   color: #ffffff !important;
@@ -191,7 +213,7 @@ body {
 }
 
 /* ==========================================
-   6. FENÊTRES MODALES (ÉDITION, MUTATION, DELETE)
+   6. FENÊTRES MODALES
 ========================================== */
 .modal-content {
   border-radius: 6px !important;

@@ -1,0 +1,610 @@
+/* --- RESET & VARIABLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-orange: #ff5722;
+  --primary-hover: #e04818;
+  --bg-dark-sidebar: #0f172a;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --white: #ffffff;
+  --success-bg: #dcfce7;
+  --success-text: #15803d;
+  --warning-bg: #fef3c7;
+  --warning-text: #b45309;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-size: 3rem; /* Augmenté de 14px à 16px */
+}
+
+.masque {
+  display: none !important;
+}
+
+/* --- ÉCRAN 1 : CONNEXION --- */
+.page-connexion {
+  display: flex;
+  min-height: 100vh;
+}
+
+.colonne-presentation {
+  flex: 1;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.contenu-presentation h1 {
+  font-size: 3rem; /* Augmenté de 2.5rem */
+  margin-bottom: 20px;
+}
+
+.contenu-presentation p {
+  color: #94a3b8;
+  font-size: 1.25rem; /* Augmenté de 1.1rem */
+  margin-bottom: 35px;
+}
+
+.logo-bide h2 {
+  font-size: 3.8rem; /* Augmenté de 3rem */
+  color: var(--primary-orange);
+}
+
+.colonne-formulaire {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  padding: 50px;
+}
+
+.carte-connexion {
+  background: var(--white);
+  padding: 50px; /* Précédemment 40px */
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px; /* Élargi de 400px à 480px */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.carte-connexion h2 {
+  font-size: 2.2rem; /* Augmenté de 1.8rem */
+  margin-bottom: 8px;
+}
+
+.sous-titre {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+.groupe-champ {
+  margin-bottom: 24px;
+}
+
+.groupe-champ label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.label-mdp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-mdp a {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-size: 0.95rem; /* Augmenté */
+}
+
+.groupe-champ input,
+.groupe-champ select {
+  width: 100%;
+  padding: 14px 16px; /* Agrandissement des inputs */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.bouton-principal {
+  width: 100%;
+  padding: 15px; /* Augmenté de 12px */
+  background-color: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bouton-principal:hover {
+  background-color: var(--primary-hover);
+}
+
+.lien-inscription {
+  text-align: center;
+  margin-top: 25px;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.lien-inscription a {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- STRUCTURE APPLICATION PRINCIPALE --- */
+.structure-app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.barre-laterale {
+  width: 290px; /* Élargi de 260px à 290px pour s'adapter aux textes plus grands */
+  background-color: var(--bg-dark-sidebar);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo-barre {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 24px;
+  font-size: 1.4rem; /* Augmenté */
+  color: var(--primary-orange);
+}
+
+.logo-barre img {
+  height: 120px; /* Augmenté de 100px à 120px */
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.menu-navigation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 12px 14px;
+}
+
+.lien-navigation {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px; /* Zone cliquable plus large */
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.05rem; /* Augmenté */
+  transition: 0.2s;
+}
+
+.lien-navigation:hover,
+.lien-navigation.actif {
+  background-color: rgba(255, 87, 34, 0.15);
+  color: var(--primary-orange);
+}
+
+.profil-utilisateur-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+}
+
+.avatar-icone {
+  font-size: 2.5rem; /* Augmenté de 2rem */
+  color: #94a3b8;
+}
+
+.contenu-principal {
+  flex: 1;
+  padding: 35px; /* Espacement global plus aéré */
+  overflow-y: auto;
+}
+
+/* --- HEADER DES PAGES --- */
+.entete-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.entete-page h2 {
+  font-size: 1.8rem; 
+  margin-bottom: 6px;
+}
+
+.entete-page p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* --- FORMULAIRE PRINTER UN RENDEZ-VOUS --- */
+
+.formulaire-rdv-grand {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.bloc-etape {
+  background-color: var(--bg-light);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.bloc-etape h4 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* 1. Sélecteurs de services (Radio-boutons) */
+.choix-services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.choix-services label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.choix-services label:hover {
+  border-color: var(--primary-orange);
+  background-color: rgba(255, 87, 34, 0.02);
+}
+
+.choix-services input[type="radio"] {
+  accent-color: var(--primary-orange);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* 2. Champs de sélection (Véhicule & Heure) */
+.bloc-etape select {
+  width: 100%;
+  padding: 14px 16px !important; /* Outrepasse les styles en ligne */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.bloc-etape select:focus,
+.bloc-etape input[type="date"]:focus {
+  border-color: var(--primary-orange);
+}
+
+/* 3. Inputs Date et Alignement */
+.bloc-etape input[type="date"] {
+  padding: 14px 16px !important;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-size: 1rem;
+  outline: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Alignement pour l'étape 3 (Date et Heure côte à côte) */
+.bloc-etape:nth-child(3) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.bloc-etape:nth-child(3) h4 {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.bloc-etape:nth-child(3) input[type="date"],
+.bloc-etape:nth-child(3) select {
+  flex: 1;
+  min-width: 200px;
+  margin: 0;
+}
+
+.bouton-orange-icone {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  padding: 12px 22px; /* Agrandissement du bouton */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- COMPOSANTS DE DASHBOARD --- */
+.banniere-rappel {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  padding: 20px 25px; /* Rembourrage agrandi */
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.bouton-blanc-petit {
+  background: var(--white);
+  color: var(--primary-orange);
+  border: none;
+  padding: 10px 18px; /* Bouton plus grand */
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.grille-statistiques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width élargie de 240px à 280px */
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.carte-stat {
+  background: var(--white);
+  padding: 25px; /* Augmenté de 20px */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  border: 1px solid var(--border-color);
+}
+
+.carte-stat i {
+  font-size: 2.6rem;
+  color: var(--primary-orange);
+}
+
+.nombre-stat {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.libelle-stat {
+  color: var(--text-muted);
+  font-size: 0.95rem; 
+}
+
+.bloc-activites-recentes {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-size: 1.05rem;
+}
+
+.liste-activites {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.element-activite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px; /* Augmenté de 12px */
+  background-color: var(--bg-light);
+  border-radius: 10px;
+}
+
+.icone-act {
+  font-size: 1.5rem; /* Augmenté de 1.2rem */
+  color: var(--primary-orange);
+}
+
+.info-act {
+  flex: 1;
+  margin-left: 18px;
+  font-size: 1rem;
+}
+
+.info-act small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.badge-statut {
+  padding: 6px 14px; /* Augmenté */
+  border-radius: 20px;
+  font-size: 0.9rem; /* Augmenté de 0.8rem */
+  font-weight: bold;
+}
+
+.badge-statut.effectue {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.badge-statut.en-attente {
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+}
+
+/* --- DISPOSITION COLONNES --- */
+.disposition-deux-colonnes {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.carte-vehicule,
+.carte-formulaire-ajout,
+.carte-recapitulatif {
+  background: var(--white);
+  padding: 25px; /* Augmenté de 20px */
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.actions-vehicule {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.bouton-secondaire,
+.bouton-danger {
+  padding: 10px 16px; /* Agrandis */
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bouton-secondaire {
+  background-color: #e2e8f0;
+  color: var(--text-dark);
+}
+
+.bouton-danger {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+/* --- CATALOGUE & TARIFS --- */
+.grille-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min-width élargie de 280px à 320px */
+  gap: 25px;
+}
+
+.carte-service {
+  background: var(--white);
+  padding: 30px; /* Augmenté de 25px */
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.entete-service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem; /* Augmenté de 1.2rem */
+  color: var(--primary-orange);
+  margin-bottom: 18px;
+}
+
+.description-service {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.tableau-tarifs {
+  width: 100%;
+  margin-bottom: 25px;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.tableau-tarifs td {
+  padding: 12px 0; /* Espacement vertical augmenté */
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.tableau-tarifs td:last-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* --- TABLEAU HISTORIQUE --- */
+.conteneur-tableau {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.tableau-historique {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.tableau-historique th,
+.tableau-historique td {
+  padding: 18px 24px; /* Cellules agrandies (précédemment 15px 20px) */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tableau-historique th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

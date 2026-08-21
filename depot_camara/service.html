@@ -21,7 +21,7 @@
     <div class="container-fluid px-lg-5">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
         <!-- LOGO IMAGE NAVBAR -->
-        <img src="image/logo.jpeg" alt="Bidè Logo" class="brand-logo-img">
+        <a href="../index.html"> <img src="image/logo.jpeg" alt="Bidè Logo" class="brand-logo-img"> </a>
         <div>
           <span class="brand-title">Bidè</span>
           <span class="brand-subtitle">AKIMMAKO AUTO SERVICES</span>
@@ -354,7 +354,7 @@
         <div class="col-lg-4">
           <div class="d-flex align-items-center gap-2 mb-3">
             <!-- LOGO IMAGE FOOTER -->
-            <img src="image/logo.jpeg" alt="Bidè Logo" class="brand-logo-img-footer">
+            <a href="../index.html"><img src="image/logo.jpeg" alt="Bidè Logo" class="brand-logo-img-footer"></a>
             <span class="small fw-semibold text-secondary" style="font-size: 0.75rem;">AKIMMAKO AUTO SERVICES</span>
           </div>
           <p class="text-secondary small col-lg-10">
@@ -396,12 +396,12 @@
         <div class="modal-header border-0 p-0 mb-3">
           <div>
             <span class="text-danger small fw-bold text-uppercase">DEMANDE DE SERVICE</span>
-            <h3 id="modalServiceTitle" class="fw-bold mb-0">Réparation d'engins</h3>
+            <h3 id="modalServiceTitle" class="fw-bold mb-0">Prendre rendez-vous</h3>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
         </div>
         <div class="modal-body p-0">
-          <p class="small text-muted mb-4">Cette interface est prête pour être connectée au parcours de réservation de la plateforme Bidè.</p>
+          <p class="small text-muted mb-4">Choisissez le service dont vous avez besoin et décrivez votre demande.</p>
           
           <form id="formDemande">
             <div class="mb-3">
@@ -415,12 +415,37 @@
             </div>
 
             <div class="mb-3">
+              <label class="form-label small text-muted fw-bold">VOTRE TÉLÉPHONE</label>
+              <input type="tel" class="form-control rounded-0 p-2" placeholder="+228 90 00 00 00">
+            </div>
+
+            <div class="mb-3">
               <label class="form-label small text-muted fw-bold">VOTRE BESOIN</label>
               <select id="modalSelectBesoin" class="form-select rounded-0 p-2">
-                <option value="Réparation d'engins">Réparation d'engins</option>
+                <!-- NOUVELLES OPTIONS DE L'ACCUEIL -->
+                <option value="Parking sécurisé">Parking sécurisé</option>
+                <option value="Vente & Location de véhicules">Vente & Location de véhicules</option>
+                <option value="Auto-école">Auto-école</option>
+                <option value="Formation mécanique professionnelle">Formation mécanique professionnelle</option>
+                <option value="Vente de pièces détachées">Vente de pièces détachées</option>
+                <!-- OPTIONS EXISTANTES -->
+                <option value="Réparation d'engins" selected>Réparation d'engins</option>
                 <option value="Lavage & entretien">Lavage & entretien</option>
                 <option value="Remorquage longue distance">Remorquage longue distance</option>
                 <option value="Pneus & pièces détachées">Pneus & pièces détachées</option>
+                <option value="Partenariats">Partenariats</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small text-muted fw-bold">RÉGION / STATION</label>
+              <select class="form-select rounded-0 p-2">
+                <option value="">Choisissez votre région</option>
+                <option value="maritime">Maritime</option>
+                <option value="plateaux">Plateaux</option>
+                <option value="centrale">Centrale</option>
+                <option value="kara">Kara</option>
+                <option value="savanes">Savanes</option>
               </select>
             </div>
 

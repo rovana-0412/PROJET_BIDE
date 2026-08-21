@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidè - AKIMMAKO Auto Services</title>
+
+    <!-- =====================================================
+         BOOTSTRAP CSS
+    ====================================================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- =====================================================
+         CSS PERSONNALISÉ
+    ====================================================== -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-bide">
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="images/logo.jpeg" alt="Logo Bidè" class="brand-logo-img">
+                <div>
+                    <span class="brand-title">Bidè</span>
+                    <span class="brand-subtitle">AKIMMAKO AUTO SERVICES</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Ouvrir le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bide active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bide" href="depot_camara/service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bide" href="pages/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bide" href="depot_serge/connexion.html">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-login" href="depot_serge/connexion.html">
+                            <i class="bi bi-person-fill me-1"></i> Espace client
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- =====================================================
+         HERO - VIDÉO EN ARRIÈRE-PLAN
+    ====================================================== -->
+    <section class="hero-video-section">
+
+        <!-- VIDÉO -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="videos/videoaccueil1.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <!-- OVERLAY -->
+        <div class="hero-overlay"></div>
+
+        <!-- CONTENU HERO -->
+        <div class="container-fluid px-lg-5 position-relative" style="z-index: 3;">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7">
+
+                    <span class="tagline-red">AKIMMAKO AUTO SERVICES / TOGO</span>
+
+                    <h1 class="hero-title text-white">
+                        Votre véhicule,<br>
+                        <span class="text-red">notre priorité.</span>
+                    </h1>
+
+                    <p class="hero-description text-white">
+                        Bienvenue chez Bidè, votre partenaire pour l'entretien, le lavage, la réparation,
+                        l'assistance automobile, la formation et bien plus encore au Togo.
+                    </p>
+
+                    <div class="d-flex align-items-center gap-4 flex-wrap">
+                        <a href="depot_camara/service.html" class="btn btn-red">
+                            Découvrir nos services
+                            <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                        <a href="pages/contact.html" class="btn-link-underline">
+                            Nous contacter
+                            <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+
+                    <div class="sub-text-check mt-4">
+                        <i class="bi bi-check-circle-fill text-danger"></i>
+                        <span class="text-white">Des services professionnels, proches de vous.</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRÉSENTATION - À PROPOS
+    ====================================================== -->
+    <section class="py-5">
+        <div class="container-fluid px-lg-5">
+
+            <div class="row align-items-center g-5">
+
+                <!-- TEXTE -->
+                <div class="col-lg-6">
+                    <span class="tagline-red">À PROPOS DE BIDÈ</span>
+                    <h2 class="display-3 fw-bold mt-3">
+                        Une solution pour<br>
+                        <span class="text-danger">votre mobilité.</span>
+                    </h2>
+                    <p class="text-secondary fs-5 mt-4">
+                        Bidè - AKIMMAKO Auto Services accompagne les particuliers et les professionnels
+                        dans l'entretien, la gestion et la formation autour de leurs véhicules.
+                    </p>
+                    <p class="text-secondary">
+                        Notre objectif est de proposer des services pratiques et adaptés aux besoins
+                        de chaque client : parking sécurisé, vente et location, auto-école,
+                        formation professionnelle, carte de fidélité et bien plus.
+                    </p>
+                    <a href="depot_camara/service.html" class="btn btn-red mt-3">
+                        Découvrir nos services
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+                <!-- CHIFFRES -->
+                <div class="col-lg-6">
+                    <div class="bg-dark text-white p-5 rounded">
+
+                        <div class="row g-4">
+
+                            <div class="col-6">
+                                <div class="display-4 fw-bold text-danger">24/7</div>
+                                <p class="text-secondary mb-0">Assistance</p>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="display-4 fw-bold text-danger">05</div>
+                                <p class="text-secondary mb-0">Régions couvertes</p>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="display-4 fw-bold text-danger">25</div>
+                                <p class="text-secondary mb-0">Stations</p>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="display-4 fw-bold text-danger">01</div>
+                                <p class="text-secondary mb-0">Équipe à votre service</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         NOS SERVICES (avec image de fond)
+    ====================================================== -->
+    <section id="services" class="py-5">
+
+        <div class="container-fluid px-lg-5">
+
+            <!-- TITRE -->
+            <div class="d-flex justify-content-between align-items-end mb-5">
+                <div>
+                    <span class="tagline-red">NOS SERVICES</span>
+                    <h2 class="display-3 fw-bold mt-2">
+                        Tout pour<br>
+                        <span class="text-danger">votre véhicule.</span>
+                    </h2>
+                </div>
+                <p class="text-white col-lg-4 mb-0 d-none d-lg-block" style="opacity: 0.85;">
+                    Découvrez nos différents services pour entretenir, réparer, former et faciliter vos déplacements.
+                </p>
+            </div>
+
+            <!-- CARTES SERVICES -->
+            <div class="row g-4">
+
+                <!-- 1. PARKING -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="home-service-card">
+                        <div class="service-icon"><i class="bi bi-p-square-fill"></i></div>
+                        <span class="badge bg-danger mb-2">NOUVEAU</span>
+                        <span class="small text-muted">01 / PARKING</span>
+                        <h3 class="fw-bold mt-2">Parking sécurisé</h3>
+                        <p class="text-secondary">
+                            Stationnement pour véhicules sans garage à domicile.
+                            Surveillance 24h/24 et gardiennage.
+                        </p>
+                        <ul class="list-unstyled small text-start">
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> 24h/24 - 7j/7</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Gardiennage inclus</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Tarifs mensuels</li>
+                        </ul>
+                        <a href="depot_camara/service.html" class="fw-bold" style="color: #FF4D2E;">
+                            En savoir plus <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. VENTE & LOCATION -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="home-service-card">
+                        <div class="service-icon"><i class="bi bi-car-front-fill"></i></div>
+                        <span class="small text-muted">02 / VENTE & LOCATION</span>
+                        <h3 class="fw-bold mt-2">Vente & Location</h3>
+                        <p class="text-secondary">
+                            Vente et location de véhicules neufs et d'occasion,
+                            avec ou sans chauffeur.
+                        </p>
+                        <ul class="list-unstyled small text-start">
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Particuliers & pros</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Crédit possible</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Flotte récente</li>
+                        </ul>
+                        <a href="depot_camara/service.html" class="fw-bold" style="color: #FF4D2E;">
+                            En savoir plus <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. AUTO-ÉCOLE -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="home-service-card">
+                        <div class="service-icon"><i class="bi bi-sign-turn-right-fill"></i></div>
+                        <span class="small text-muted">03 / AUTO-ÉCOLE</span>
+                        <h3 class="fw-bold mt-2">Auto-école</h3>
+                        <p class="text-secondary">
+                            Formation à la conduite pour particuliers et professionnels.
+                            Permis B, C et conduite accompagnée.
+                        </p>
+                        <div class="small text-start text-secondary">
+                            <strong>Horaires :</strong><br>
+                            🌅 Jour : 08h00 - 12h00<br>
+                            🌙 Soir : 17h00 - 20h00
+                        </div>
+                        <a href="depot_camara/service.html" class="fw-bold mt-2 d-inline-block" style="color: #FF4D2E;">
+                            En savoir plus <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. FORMATION MÉCANIQUE -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="home-service-card">
+                        <div class="service-icon"><i class="bi bi-wrench-adjustable-circle-fill"></i></div>
+                        <span class="small text-muted">04 / FORMATION PRO</span>
+                        <h3 class="fw-bold mt-2">Formation Mécanique</h3>
+                        <p class="text-secondary">
+                            Formation professionnelle en mécanique et engins lourds.
+                            Moteurs diesel, froid auto, engins lourds.
+                        </p>
+                        <ul class="list-unstyled small text-start">
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Certificat reconnu</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Cours jour et soir</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Atelier pratique</li>
+                        </ul>
+                        <a href="depot_camara/service.html" class="fw-bold" style="color: #FF4D2E;">
+                            Voir les horaires <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. CARTE DE FIDÉLITÉ -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="home-service-card">
+                        <div class="service-icon"><i class="bi bi-star-fill"></i></div>
+                        <span class="badge bg-warning text-dark mb-2">OFFRE SPÉCIALE</span>
+                        <span class="small text-muted">05 / FIDÉLITÉ</span>
+                        <h3 class="fw-bold mt-2">Carte de fidélité</h3>
+                        <p class="text-secondary">
+                            Pour chaque client venant plus de 4 fois.
+                            Réductions et avantages exclusifs.
+                        </p>
+                        <ul class="list-unstyled small text-start">
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> -10% sur tous les services</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Réservation prioritaire</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> 1 service offert/an</li>
+                        </ul>
+                        <a href="depot_serge/connexion.html" class="fw-bold" style="color: #FF4D2E;">
+                            S'inscrire <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. VENTE PIÈCES -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="home-service-card">
+                        <div class="service-icon"><i class="bi bi-gear-wide-connected"></i></div>
+                        <span class="small text-muted">06 / PIÈCES</span>
+                        <h3 class="fw-bold mt-2">Vente de pièces</h3>
+                        <p class="text-secondary">
+                            Vente de pièces détachées aux grossistes, garages
+                            et particuliers possédant des engins.
+                        </p>
+                        <ul class="list-unstyled small text-start">
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Pièces neuves</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Livraison possible</li>
+                            <li><i class="bi bi-check-circle-fill text-danger me-1"></i> Tarifs grossistes</li>
+                        </ul>
+                        <a href="depot_camara/service.html" class="fw-bold" style="color: #FF4D2E;">
+                            En savoir plus <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BOUTON -->
+            <div class="text-center mt-5">
+                <a href="depot_camara/service.html" class="btn btn-red btn-lg">
+                    Voir tous nos services
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CARTE DE FIDÉLITÉ (section dédiée)
+    ====================================================== -->
+    <section class="py-5 fidelite-section" style="background-color: #1A1A1A;">
+        <div class="container-fluid px-lg-5">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <span class="tagline-red" style="color: #FF4D2E;">CARTE DE FIDÉLITÉ</span>
+                    <h2 class="display-4 fw-bold text-white mt-3">
+                        Plus vous venez, <br>
+                        <span class="text-danger">plus vous gagnez.</span>
+                    </h2>
+                    <p class="text-secondary fs-5 mt-3">
+                        Pour chaque client venant plus de 4 fois,
+                        nous offrons des avantages exclusifs.
+                    </p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="d-flex align-items-center gap-3 mb-2">
+                            <i class="bi bi-check-circle-fill text-danger fs-4"></i>
+                            <span class="text-white">-10% sur tous les services</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3 mb-2">
+                            <i class="bi bi-check-circle-fill text-danger fs-4"></i>
+                            <span class="text-white">Réservation prioritaire</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3 mb-2">
+                            <i class="bi bi-check-circle-fill text-danger fs-4"></i>
+                            <span class="text-white">1 service offert par an</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3 mb-2">
+                            <i class="bi bi-check-circle-fill text-danger fs-4"></i>
+                            <span class="text-white">Accès aux offres exclusives</span>
+                        </li>
+                    </ul>
+                    <a href="depot_serge/connexion.html" class="btn btn-red mt-3">
+                        S'inscrire maintenant
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card-fidelite">
+                        <div class="text-white">
+                            <i class="bi bi-star-fill display-1 star-icon"></i>
+                            <h3 class="fw-bold mt-3">Carte Or</h3>
+                            <p class="text-white-50">Niveau Fidélité</p>
+                            <div class="d-flex justify-content-center gap-4 mt-4">
+                                <div>
+                                    <span class="display-6 fw-bold">4</span>
+                                    <small class="d-block text-white-50">Visites</small>
+                                </div>
+                                <div>
+                                    <span class="display-6 fw-bold">-10%</span>
+                                    <small class="d-block text-white-50">Réduction</small>
+                                </div>
+                                <div>
+                                    <span class="display-6 fw-bold">5</span>
+                                    <small class="d-block text-white-50">Services</small>
+                                </div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar bg-warning" style="width: 70%;"></div>
+                            </div>
+                            <small class="text-white-50 d-block mt-2">
+                                Prochain palier : 8 visites → -15%
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         TÉMOIGNAGES CLIENTS
+    ====================================================== -->
+    <section class="py-5 bg-white">
+        <div class="container-fluid px-lg-5">
+
+            <div class="text-center mb-5">
+                <span class="tagline-red">TÉMOIGNAGES</span>
+                <h2 class="display-4 fw-bold mt-2">
+                    Ce que nos <span class="text-danger">clients disent</span>
+                </h2>
+                <p class="text-secondary col-lg-6 mx-auto">
+                    Découvrez les avis de nos clients sur nos services.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Témoignage 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="text-secondary fst-italic mt-2">
+                            "Un service impeccable ! Le parking sécurisé est top,
+                            je peux laisser ma voiture en toute confiance."
+                        </p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="avatar">JD</div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0">Jean Dupont</h6>
+                                <small class="text-secondary">Client depuis 2025</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Témoignage 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="text-secondary fst-italic mt-2">
+                            "La formation en mécanique est très complète.
+                            J'ai appris énormément, surtout en pratique."
+                        </p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="avatar">MK</div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0">Marie Kouamé</h6>
+                                <small class="text-secondary">Étudiante en mécanique</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Témoignage 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="text-secondary fst-italic mt-2">
+                            "Grâce à la carte de fidélité, j'ai eu -10% sur
+                            mon entretien. Un vrai avantage pour les clients réguliers !"
+                        </p>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="avatar">PA</div>
+                            <div class="ms-3">
+                                <h6 class="fw-bold mb-0">Philippe A.</h6>
+                                <small class="text-secondary">Client fidèle</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="pages/contact.html" class="btn btn-outline-danger">
+                    Laisser un avis
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         PARTENARIATS ÉCOLES (comme avant)
+    ====================================================== -->
+    <section class="py-5" style="background-color: #F5F3EF;">
+        <div class="container-fluid px-lg-5">
+
+            <div class="text-center mb-5">
+                <span class="tagline-red">PARTENARIATS</span>
+                <h2 class="display-4 fw-bold mt-2">
+                    Nos <span class="text-danger">écoles partenaires</span>
+                </h2>
+                <p class="text-secondary col-lg-6 mx-auto">
+                    Nous formons les étudiants venant des écoles de mécanique partenaires
+                    et leur offrons une expérience professionnelle unique.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="partner-card">
+                        <i class="bi bi-mortarboard-fill display-3" style="color: #FF4D2E;"></i>
+                        <h5 class="fw-bold mt-3">École Supérieure A</h5>
+                        <p class="text-secondary small">Partenaire depuis 2024</p>
+                        <span class="badge bg-success">3 stagiaires</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="partner-card">
+                        <i class="bi bi-building display-3" style="color: #FF4D2E;"></i>
+                        <h5 class="fw-bold mt-3">Institut B</h5>
+                        <p class="text-secondary small">Partenaire depuis 2025</p>
+                        <span class="badge bg-success">5 stagiaires</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="partner-card">
+                        <i class="bi bi-tools display-3" style="color: #FF4D2E;"></i>
+                        <h5 class="fw-bold mt-3">Centre C</h5>
+                        <p class="text-secondary small">Partenaire depuis 2025</p>
+                        <span class="badge bg-success">2 stagiaires</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="partner-card">
+                        <i class="bi bi-gear display-3" style="color: #FF4D2E;"></i>
+                        <h5 class="fw-bold mt-3">École D</h5>
+                        <p class="text-secondary small">Partenaire depuis 2026</p>
+                        <span class="badge bg-warning text-dark">En cours</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="pages/contact.html" class="btn btn-outline-danger">
+                    Devenir partenaire
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         POURQUOI NOUS CHOISIR ?
+    ====================================================== -->
+    <section class="py-5">
+        <div class="container-fluid px-lg-5">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-5">
+                    <span class="tagline-red">POURQUOI BIDÈ ?</span>
+                    <h2 class="display-3 fw-bold mt-3">
+                        Le bon service,<br>
+                        <span class="text-danger">au bon moment.</span>
+                    </h2>
+                    <p class="text-secondary fs-5 mt-4">
+                        Nous plaçons la qualité, la proximité et la satisfaction
+                        du client au centre de nos services.
+                    </p>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <div class="reason-card">
+                                <i class="bi bi-shield-check"></i>
+                                <h3>Fiabilité</h3>
+                                <p>Des services pensés pour vous accompagner en toute confiance.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="reason-card">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <h3>Proximité</h3>
+                                <p>Des solutions accessibles au plus près de vos besoins.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="reason-card">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                                <h3>Réactivité</h3>
+                                <p>Une assistance adaptée aux situations urgentes.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="reason-card">
+                                <i class="bi bi-people-fill"></i>
+                                <h3>Professionnalisme</h3>
+                                <p>Une équipe engagée pour vous offrir un service de qualité.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+    <section class="py-5 bg-dark text-white newsletter-section">
+        <div class="container-fluid px-lg-5">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-6">
+                    <span class="text-danger small fw-bold text-uppercase">NEWSLETTER</span>
+                    <h2 class="display-5 fw-bold mt-2">
+                        Restez <span class="text-danger">informé</span>
+                    </h2>
+                    <p class="text-secondary">
+                        Recevez nos actualités, offres spéciales et promotions
+                        directement dans votre boîte mail.
+                    </p>
+                </div>
+
+                <div class="col-lg-6">
+                    <form class="d-flex flex-wrap gap-2">
+                        <input type="email" class="form-control form-control-lg flex-grow-1" 
+                               placeholder="Votre adresse email" required>
+                        <button class="btn btn-red btn-lg">
+                            <i class="bi bi-envelope-fill me-1"></i> S'inscrire
+                        </button>
+                    </form>
+                    <p class="text-secondary small mt-2">
+                        <i class="bi bi-shield-check text-danger me-1"></i>
+                        Vos données sont sécurisées. Désinscription facile.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         APPEL À L'ACTION
+    ====================================================== -->
+    <section class="home-cta">
+
+        <div class="container-fluid px-lg-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+                    <span class="small fw-bold text-white">BESOIN D'UN SERVICE ?</span>
+                    <h2 class="display-4 fw-bold text-white mt-2">
+                        Votre véhicule a besoin<br>de nous ?
+                    </h2>
+                    <p class="text-white opacity-75">
+                        Contactez l'équipe Bidè pour obtenir plus d'informations
+                        ou prendre rendez-vous.
+                    </p>
+                </div>
+
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="pages/contact.html" class="btn btn-light btn-lg">
+                        Nous contacter
+                        <i class="bi bi-arrow-up-right ms-1"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER COMPLET
+    ====================================================== -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+
+        <div class="container-fluid px-lg-5">
+
+            <div class="row g-5">
+
+                <!-- IDENTITÉ -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <img src="images/logo.jpeg" alt="Logo Bidè" class="brand-logo-img-footer">
+                        <span class="small fw-semibold text-secondary">AKIMMAKO AUTO SERVICES</span>
+                    </div>
+                    <p class="text-secondary small">
+                        Bidè accompagne les conducteurs, les familles,
+                        les entreprises et les apprenants dans leurs
+                        besoins automobiles.
+                    </p>
+                </div>
+
+                <!-- LIENS -->
+                <div class="col-lg-3 col-md-6">
+                    <span class="text-danger small fw-bold text-uppercase d-block mb-3">NAVIGATION</span>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="index.html" class="text-secondary text-decoration-none">Accueil</a></li>
+                        <li><a href="depot_camara/service.html" class="text-secondary text-decoration-none">Services</a></li>
+                        <li><a href="pages/contact.html" class="text-secondary text-decoration-none">Contact</a></li>
+                        <li><a href="depot_serge/connexion.html" class="text-secondary text-decoration-none">Connexion</a></li>
+                    </ul>
+                </div>
+
+                <!-- HORAIRES -->
+                <div class="col-lg-3 col-md-6">
+                    <span class="text-danger small fw-bold text-uppercase d-block mb-3">HORAIRES</span>
+                    <ul class="list-unstyled small">
+                        <li class="d-flex justify-content-between text-secondary">
+                            <span>Lundi - Vendredi</span>
+                            <span class="text-white">08h00 - 19h00</span>
+                        </li>
+                        <li class="d-flex justify-content-between text-secondary">
+                            <span>Samedi</span>
+                            <span class="text-white">09h00 - 17h00</span>
+                        </li>
+                        <li class="d-flex justify-content-between text-secondary">
+                            <span>Dimanche</span>
+                            <span class="text-danger">Fermé</span>
+                        </li>
+                        <li class="d-flex justify-content-between text-secondary mt-2 pt-2 border-top border-secondary">
+                            <span>Assistance 24h/24</span>
+                            <span class="text-white">+228 90 00 00 00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="col-lg-3 col-md-6">
+                    <span class="text-danger small fw-bold text-uppercase d-block mb-2">BESOIN D'UN SERVICE ?</span>
+                    <h3 class="fw-bold mb-3">Nous sommes à portée de route.</h3>
+                    <a href="pages/contact.html" class="btn btn-red w-100 py-2">
+                        Nous contacter
+                        <i class="bi bi-arrow-up-right ms-1"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RÉSEAUX SOCIAUX + COPYRIGHT -->
+            <div class="row mt-5 pt-3 border-top border-secondary">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-secondary small">© 2026 Bidè / AKIMMAKO Auto Services</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BOOTSTRAP JAVASCRIPT
+    ====================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- =====================================================
+         JAVASCRIPT DU PROJET
+    ====================================================== -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

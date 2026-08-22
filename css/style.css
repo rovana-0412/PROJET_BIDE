@@ -1600,3 +1600,259 @@ body {
         font-size: 1.6rem;
     }
 }
+
+/* =========================================================
+   PAGE CONNEXION - STYLES SPÉCIFIQUES
+========================================================= */
+
+/* --- Fond de la page --- */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+    padding: 6rem 2rem 4rem 2rem;
+}
+
+/* --- Carte de connexion --- */
+.login-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 3rem;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Logo --- */
+.login-card .logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-card .logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.login-card .logo h3 {
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-top: 0.5rem;
+}
+
+.login-card .logo p {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+/* --- Champs du formulaire --- */
+.login-card .form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1A1A1A;
+}
+
+.login-card .form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #E4E0D9;
+    background: #F9F8F6;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card .form-control:focus {
+    border-color: #FF4D2E;
+    box-shadow: 0 0 0 0.2rem rgba(255, 77, 46, 0.15);
+    background: #FFFFFF;
+}
+
+/* --- Bouton de connexion --- */
+.login-card .btn-login {
+    width: 100%;
+    padding: 0.9rem;
+    background: #FF4D2E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.login-card .btn-login:hover {
+    background: #E03E20;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(255, 77, 46, 0.35);
+}
+
+.login-card .btn-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Séparateur --- */
+.login-card .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    color: #9CA3AF;
+    font-size: 0.85rem;
+}
+
+.login-card .divider::before,
+.login-card .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #E4E0D9;
+}
+
+/* --- Comptes de démonstration --- */
+.login-card .demo-accounts {
+    background: #F9F8F6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.login-card .demo-accounts .demo-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6B7280;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.login-card .demo-accounts .demo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #E4E0D9;
+}
+
+.login-card .demo-accounts .demo-item:last-child {
+    border-bottom: none;
+}
+
+/* --- Badges des rôles --- */
+.login-card .demo-accounts .demo-item .badge-role {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.badge-role.admin {
+    background: #8B5CF6;
+    color: #FFFFFF;
+}
+
+.badge-role.gestionnaire {
+    background: #3B82F6;
+    color: #FFFFFF;
+}
+
+.badge-role.client {
+    background: #10B981;
+    color: #FFFFFF;
+}
+
+/* --- Liens du bas --- */
+.login-card .footer-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.login-card .footer-links a {
+    color: #6B7280;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.25s ease;
+}
+
+.login-card .footer-links a:hover {
+    color: #FF4D2E;
+}
+
+.login-card .footer-links .separator {
+    color: #E4E0D9;
+    margin: 0 0.5rem;
+}
+
+/* =========================================================
+   TOAST (notification)
+========================================================= */
+
+.login-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease forwards;
+}
+
+.login-toast.error {
+    background: #EF4444;
+}
+
+.login-toast.success {
+    background: #10B981;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 576px) {
+    .login-page {
+        padding: 5rem 1rem 2rem 1rem;
+    }
+
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-card .demo-accounts .demo-item {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+}
+
+
+.login-card .logo img {
+    height: 100px;  /* Encore plus grand */
+    width: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+    .login-card .logo img {
+        height: 60px;  /* Plus petit sur mobile */
+    }
+}

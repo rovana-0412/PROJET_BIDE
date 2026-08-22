@@ -781,3 +781,123 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+/* =========================================================
+   PAGE CONNEXION - JAVASCRIPT SPÉCIFIQUE
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const loginForm = document.getElementById('loginForm');
+    const loginBtn = document.getElementById('loginBtn');
+    const loginBtnText = document.getElementById('loginBtnText');
+    const loginSpinner = document.getElementById('loginSpinner');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Récupération des valeurs
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+
+            // Validation simple
+            if (!email || !password) {
+                showToast('⚠️ Veuillez remplir tous les champs.', 'error');
+                return;
+            }
+
+            // Afficher le spinner
+            loginBtn.disabled = true;
+            loginBtnText.textContent = 'Connexion...';
+            loginSpinner.classList.remove('d-none');
+
+            // Simuler une requête serveur
+            setTimeout(function() {
+
+                // Base de données simulée (à remplacer par une vraie API)
+                const users = {
+                    'admin@bide.tg': { role: 'admin', name: 'Administrateur', id: 1 },
+                    'gestionnaire@bide.tg': { role: 'gestionnaire', name: 'Gestionnaire', id: 2 },
+                    'client@bide.tg': { role: 'client', name: 'Client', id: 3 }
+                };
+
+                // Vérification des identifiants
+                if (users[email] && password === 'password') {
+                    const user = users[email];
+                    loginUser(user.role, user.name, user.id);
+                } else {
+                    // Erreur de connexion
+                    showToast('❌ Email ou mot de passe incorrect.', 'error');
+                    loginBtn.disabled = false;
+                    loginBtnText.textContent = 'Se connecter';
+                    loginSpinner.classList.add('d-none');
+                }
+
+            }, 1500);
+
+        });
+    }
+
+});
+
+
+/* =========================================================
+   FONCTION DE CONNEXION (globale)
+========================================================= */
+
+function loginUser(role, name, id) {
+    // Stocker les informations en session
+    sessionStorage.setItem('userRole', role);
+    sessionStorage.setItem('userName', name);
+    sessionStorage.setItem('userId', id);
+
+    // Afficher un message de succès
+    showToast('✅ Connexion réussie ! Bienvenue ' + name, 'success');
+
+    // Rediriger vers le bon dashboard
+    setTimeout(function() {
+        switch (role) {
+            case 'admin':
+                window.location.href = 'admin/dashboard.html';
+                break;
+            case 'gestionnaire':
+                window.location.href = 'gestionnaire/dashboard.html';
+                break;
+            case 'client':
+                window.location.href = 'client/dashboard.html';
+                break;
+            default:
+                window.location.href = '../index.html';
+        }
+    }, 1000);
+}
+
+
+/* =========================================================
+   FONCTION TOAST (pour les notifications)
+========================================================= */
+
+function showToast(message, type) {
+    // Supprimer les toasts existants
+    const existingToasts = document.querySelectorAll('.login-toast');
+    existingToasts.forEach(function(toast) {
+        toast.remove();
+    });
+
+    // Créer le toast
+    const toast = document.createElement('div');
+    toast.className = 'login-toast ' + (type || '');
+    toast.textContent = message;
+
+    document.body.appendChild(toast);
+
+    // Auto-suppression après 5 secondes
+    setTimeout(function() {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s ease';
+        setTimeout(function() {
+            toast.remove();
+        }, 300);
+    }, 5000);
+}

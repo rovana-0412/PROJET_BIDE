@@ -6,8 +6,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fa;
+    background: #f8fafc;
     color: #172033;
+    font-size: 16px; /* Agrandi */
 }
 
 /* SIDEBAR */
@@ -17,7 +18,7 @@ body {
     top: 0;
     width: 245px;
     height: 100vh;
-    background: #101827;
+    background: #0f172a; /* Aligné sur Client */
     color: white;
     padding: 25px 15px;
     display: flex;
@@ -36,7 +37,7 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    background: #ff6b1a;
+    background: #ff5722; /* Aligné sur Client */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +48,7 @@ body {
 }
 
 .logo span {
-    font-size: 7px;
+    font-size: 8px;
     color: #aeb6c5;
 }
 
@@ -61,11 +62,11 @@ body {
     display: flex;
     align-items: center;
     gap: 13px;
-    padding: 13px 15px;
+    padding: 15px 15px;
     border-radius: 6px;
     color: #aeb6c5;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     transition: .2s;
     cursor: pointer;
 }
@@ -76,7 +77,7 @@ body {
 }
 
 .menu-item.active {
-    background: #087f78;
+    background: #ff5722; /* Aligné sur Client */
     color: white;
 }
 
@@ -98,7 +99,7 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #ff6b1a;
+    background: #ff5722; /* Aligné sur Client */
     color: white;
     display: flex;
     align-items: center;
@@ -108,12 +109,12 @@ body {
 
 .profile strong {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .profile small {
     color: #8994a5;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 /* MAIN */
@@ -132,13 +133,13 @@ body {
 }
 
 .topbar h1 {
-    font-size: 25px;
+    font-size: 28px;
     margin-bottom: 6px;
 }
 
 .topbar p {
     color: #7c8798;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .top-actions {
@@ -164,11 +165,11 @@ body {
 
 .user strong {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .user span {
-    font-size: 10px;
+    font-size: 11px;
     color: #8a94a3;
 }
 
@@ -200,17 +201,17 @@ body {
     padding: 12px;
     border: none;
     outline: none;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .primary-btn {
-    background: #ff6b1a;
+    background: #ff5722; /* Aligné sur Client */
     color: white;
     border: none;
     padding: 12px 18px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -218,7 +219,7 @@ body {
 }
 
 .primary-btn:hover {
-    background: #e85c0c;
+    background: #e04818; /* Aligné sur Client */
 }
 
 /* STATS */
@@ -250,7 +251,7 @@ body {
 
 .orange {
     background: #fff0e8;
-    color: #ff6b1a;
+    color: #ff5722; /* Aligné sur Client */
 }
 
 .green {
@@ -270,17 +271,17 @@ body {
 
 .stat-card span {
     color: #8791a0;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .stat-card h2 {
     margin-top: 5px;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .stat-card small {
     color: #8791a0;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 /* TABLE */
@@ -301,19 +302,19 @@ body {
 }
 
 .card-header h2 {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .card-header p {
     margin-top: 5px;
     color: #8993a1;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .see-all {
-    color: #087f78;
+    color: #ff5722; /* Aligné sur Client */
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -324,7 +325,7 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 thead {
@@ -333,13 +334,14 @@ thead {
 
 th {
     text-align: left;
-    padding: 14px 20px;
+    padding: 16px 20px;
     color: #7c8795;
     font-weight: 600;
+    font-size: 13px;
 }
 
 td {
-    padding: 15px 20px;
+    padding: 18px 20px;
     border-top: 1px solid #edf0f3;
     color: #465263;
 }
@@ -355,12 +357,12 @@ td {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #e8f3f1;
-    color: #087f78;
+    background: #fff0e8; /* Fond orange clair */
+    color: #ff5722;      /* Aligné sur Client */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     flex-shrink: 0;
 }
@@ -368,21 +370,21 @@ td {
 .client-info strong {
     display: block;
     color: #273244;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .client-info small {
     color: #9aa3ae;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 /* SERVICE */
 .service {
-    background: #e7f7f3;
-    color: #087f78;
+    background: #fff0e8;  /* Fond orange clair */
+    color: #ff5722;       /* Aligné sur Client */
     padding: 5px 9px;
     border-radius: 20px;
-    font-size: 10px;
+    font-size: 11px;
     display: inline-block;
 }
 
@@ -407,7 +409,7 @@ td {
 }
 
 .action.edit {
-    color: #087f78;
+    color: #ff5722; /* Aligné sur Client */
 }
 
 .action.delete {
@@ -448,13 +450,13 @@ td {
 }
 
 .modal-header h2 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .modal-header p {
     margin-top: 5px;
     color: #8a94a3;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .close {
@@ -466,7 +468,7 @@ td {
 }
 
 form h3 {
-    font-size: 13px;
+    font-size: 14px;
     margin: 20px 0 15px;
     color: #273244;
 }
@@ -484,39 +486,39 @@ form h3 {
 }
 
 .form-group label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     color: #4b5666;
 }
 
 .form-group input,
 .form-group select {
-    padding: 11px;
+    padding: 12px;
     border: 1px solid #dfe4e9;
     border-radius: 6px;
     outline: none;
-    font-size: 12px;
+    font-size: 14px;
     background: white;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #087f78;
+    border-color: #ff5722; /* Aligné sur Client */
 }
 
 .form-group textarea {
     width: 100%;
-    padding: 11px;
+    padding: 12px;
     border: 1px solid #dfe4e9;
     border-radius: 6px;
     outline: none;
-    font-size: 12px;
+    font-size: 14px;
     font-family: inherit;
     resize: vertical;
 }
 
 .form-group textarea:focus {
-    border-color: #087f78;
+    border-color: #ff5722; /* Aligné sur Client */
 }
 
 .form-actions {
@@ -529,11 +531,11 @@ form h3 {
 }
 
 .cancel-btn {
-    padding: 11px 18px;
+    padding: 12px 18px;
     border: 1px solid #dfe4e9;
     background: white;
     border-radius: 6px;
-    cursor: pointer;
+    font-size: 14px;
 }
 
 /* DASHBOARD */
@@ -552,7 +554,7 @@ form h3 {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px;
+    padding: 14px;
     border-bottom: 1px solid #edf0f3;
 }
 
@@ -564,11 +566,11 @@ form h3 {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    background: #f0f4f8;
+    background: #fff0e8; /* Fond orange clair */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #087f78;
+    color: #ff5722;      /* Aligné sur Client */
     flex-shrink: 0;
 }
 
@@ -578,17 +580,17 @@ form h3 {
 
 .dashboard-info strong {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     color: #273244;
 }
 
 .dashboard-info span {
-    font-size: 11px;
+    font-size: 12px;
     color: #8791a0;
 }
 
 .dashboard-item small {
-    font-size: 10px;
+    font-size: 11px;
     color: #8791a0;
 }
 

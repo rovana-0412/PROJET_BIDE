@@ -852,28 +852,24 @@ function loginUser(role, name, id) {
     sessionStorage.setItem('userName', name);
     sessionStorage.setItem('userId', id);
 
-    // Afficher un message de succès
-    showToast('✅ Connexion réussie ! Bienvenue ' + name, 'success');
-
-    // Rediriger vers le bon dashboard
+    // Rediriger vers le bon dashboard selon le rôle
     setTimeout(function() {
         switch (role) {
             case 'admin':
-                window.location.href = 'admin/dashboard.html';
+                window.location.href = 'admin/admin.html';
                 break;
             case 'gestionnaire':
-                window.location.href = 'gestionnaire/dashboard.html';
+                window.location.href = 'gestionnaire/index.html';
                 break;
             case 'client':
-                window.location.href = 'client/dashboard.html';
+                // Redirige directement vers le tableau de bord client
+                window.location.href = 'depot_serge/clients.html';
                 break;
             default:
                 window.location.href = '../index.html';
         }
     }, 1000);
 }
-
-
 /* =========================================================
    FONCTION TOAST (pour les notifications)
 ========================================================= */

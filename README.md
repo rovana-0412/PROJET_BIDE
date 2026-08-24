@@ -76,9 +76,7 @@ Ce dépôt contient l'intégralité de la plateforme : **site public**, **carte 
 ---
 
 ## 2. Stack technique et architecture
----
 
-## 2. Stack technique et architecture
 ### Charte graphique (du cahier des charges)
 
 | Élément | Valeur |
@@ -111,23 +109,6 @@ python -m http.server 8000
 npx serve .
 ---
 
-
-
-```markdown
----
-
-## 4. Sécurité & bonnes pratiques
-
-- Validation de tous les formulaires côté client (e-mail, téléphone, dates, quantités).
-- Données personnelles stockées uniquement en local (démo) — aucune transmission.
-- `autocomplete` et attributs ARIA pour l'accessibilité.
-- HTML sémantique, `lang="fr"`, méta-descriptions, `alt` sur les images.
-- Sanitisation des entrées utilisateur (anti-XSS).
-- Session avec expiration automatique après 30 min d'inactivité.
-- Mots de passe hachés côté client (SHA-256 ou fallback).
-
----
-
 ## 5. Rôles & Accès (Système de Connexion)
 
 | Rôle | Email | Mot de passe | Redirection |
@@ -148,9 +129,15 @@ npx serve .
 
 ---
 
+**👉 Bloc 3 (À coller à la suite du Bloc 2) :**
+
+```markdown
+---
+
 ## 7. Cahier des Charges
 
 Le cahier des charges complet (avec la partie facturation) est disponible dans le fichier `cahier_des_charges.md` (ou sur demande).
+
 ---
 
 ## 8. Gestion de Projet, Rôles & Responsabilités
@@ -164,6 +151,11 @@ Le cahier des charges complet (avec la partie facturation) est disponible dans l
 
 > **Historique des commits :** Consultez l'onglet **"Insights" → "Contributors"** ou la liste des commits sur GitHub pour voir la répartition du travail et la progression du développement.
 
+---
+
+**👉 Bloc 4 (À coller à la suite du Bloc 3) :**
+
+```markdown
 ---
 
 ## 9. Livrables & Démonstration

@@ -21,7 +21,7 @@ Ce dépôt contient l'intégralité de la plateforme : **site public**, **carte 
 <table>
   <tr>
     <td align="center">
-      <img src="images/claudia.jpeg" width="120px"><br>
+      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/claudia.jpeg?raw=true" width="120px"><br>
       <b>AKUESON Adoudé Claudia Rovana</b><br>
       Scrum Master / Développeuse
     </td>
@@ -129,8 +129,6 @@ npx serve .
 
 ---
 
-**👉 Bloc 3 (À coller à la suite du Bloc 2) :**
-
 ```markdown
 ---
 
@@ -152,8 +150,6 @@ Le cahier des charges complet (avec la partie facturation) est disponible dans l
 > **Historique des commits :** Consultez l'onglet **"Insights" → "Contributors"** ou la liste des commits sur GitHub pour voir la répartition du travail et la progression du développement.
 
 ---
-
-**👉 Bloc 4 (À coller à la suite du Bloc 3) :**
 
 ```markdown
 ---

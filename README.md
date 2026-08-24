@@ -1,66 +1,134 @@
-# 🚗 Bidè - AKIMMAKO Auto Services
+# 🚗 Bidè — Plateforme web de gestion des services automobiles
 
-**Plateforme web complète pour la gestion des services automobiles au Togo.**
+> **Votre partenaire automobile à Lomé et dans tout le Togo — « Votre véhicule, notre priorité. »**
 
-Bidè est une solution numérique tout-en-un conçue pour les particuliers, les professionnels et les gestionnaires. Elle couvre la gestion des services (réparation, lavage, remorquage, parking, formation), la facturation, la gestion du réseau national (5 régions, 25 stations) et l'administration complète de la plateforme.
+Bidè est une plateforme web complète de gestion des services automobiles (réparation, lavage, remorquage, parking, vente/location, formation, auto-école, fidélité), développée dans le cadre d'un projet pédagogique pour le compte de **AKIMMAKO Auto Services**.
 
----
-
-## 📦 Livrables & Démonstration
-
-- 🔗 **Dépôt GitHub :** [Insérer le lien de votre repository ici]
-- 🌐 **Plateforme fonctionnelle :** [Insérer le lien Netlify / Vercel / ou spécifier "Lancer en local avec Live Server"]
-- 📄 **Cahier des charges détaillé :** Supervisé par toute l'équipe. Disponible dans le dossier `docs/`
-- 📊 **Historique des commits & Rôles :** Suivi via l'outil **Trello** et disponible sur l'onglet "Insights" → "Contributors" de votre GitHub
+Ce dépôt contient l'intégralité de la plateforme : **site public**, **carte interactive du Togo**, **système de connexion multi-rôles**, **3 dashboards (Admin, Gestionnaire, Client)**, **module de facturation**, et un **cahier des charges** détaillé.
 
 ---
 
-## 📂 Arborescence du Projet
+## 1. Présentation
 
-```text
-PROJET_BIDE/
-│
-├── css/                        # Styles globaux du site public
-├── images/                     # Images globales (logos, illustrations)
-├── js/                         # Scripts globaux (navigation, formulaire, etc.)
-├── pages/                      # Toutes les pages internes
-│   ├── admin/                  # ESPACE ADMINISTRATEUR
-│   │   ├── admin.html          # Dashboard Admin (Gestion des stations, clients, etc.)
-│   │   ├── admin-script.js     # Logique du dashboard admin
-│   │   └── admin-style.css     # Styles du dashboard admin
-│   │
-│   ├── depot_serge/            # ESPACE CLIENT (Nommé "Serge")
-│   │   ├── CSS/                # Styles spécifiques à l'espace client
-│   │   ├── Images/             # Images du dashboard client
-│   │   ├── JS/                 # Scripts spécifiques à l'espace client
-│   │   ├── clients.html        # Page principale de l'espace client
-│   │   └── dashboard.html      # Tableau de bord client
-│   │
-│   ├── gestionnaire/           # ESPACE GESTIONNAIRE
-│   │   ├── index.html          # Dashboard Gestionnaire
-│   │   ├── script.js           # Logique de gestion (Clients, Véhicules, Services, Factures)
-│   │   └── style.css           # Styles du dashboard gestionnaire
-│   │
-│   ├── MaJ_service/            # PAGE SERVICES PUBLICS
-│   │   ├── image/              # Images des services (Réparation, Lavage, etc.)
-│   │   ├── video/              # Vidéo d'arrière-plan du hero
-│   │   ├── service.html        # Page des services avec carte interactive du Togo
-│   │   ├── script.js           # Logique de la page services (Stations, Modal RDV)
-│   │   └── style.css           # Styles de la page services
-│   │
-│   ├── connexion.html          # Page de connexion (Redirige vers les 3 dashboards)
-│   ├── contact.html            # Page de contact (Formulaire + Google Maps + Horaires)
-│   └── depot_serge.html        # Page de redirection spécifique (si utilisée)
-│
-├── videos/                     # Vidéos globales du site (Hero accueil)
-├── README.md                   # Ce fichier
-└── index.html                  # Page d'accueil du site public
+| Élément | Détail |
+|---|---|
+| Client | AKIMMAKO Auto Services — entrepreneur |
+| Interlocuteur direct | Le professeur (représentant du propriétaire) |
+| Équipe | 4 membres |
+
+## 👨‍💻 Équipe de développement
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/claudia.jpeg" width="120px"><br>
+      <b>AKUESON Adoudé Claudia Rovana</b><br>
+      Scrum Master / Développeuse
+    </td>
+    <td align="center">
+      <img src="images/einstein.jpeg" width="120px"><br>
+      <b>CAMARA Guy Mari Mohamed</b><br>
+      Développeur
+    </td>
+    <td align="center">
+      <img src="images/serge.jpeg" width="120px"><br>
+      <b>CHAOLD Komi Serge</b><br>
+      Développeur / UI
+    </td>
+    <td align="center">
+      <img src="images/cedric.jpg" width="120px"><br>
+      <b>APETOH Yannick-Eudes Cédric</b><br>
+      Développeur
+    </td>
+  </tr>
+</table>
+
+| Durée du projet | 17/08/2026 → 24/08/2026 |
+| Stack technique | Bootstrap 5.3, JavaScript (vanilla ES6+), HTML5, CSS3, Git / GitHub |
+| Gestion de projet | Trello |
+| Type de site | Statique (Bootstrap + JS), données locales (localStorage) |
+| Localisation cible | **Togo** (5 régions, 25 stations) |
+
+### Fonctionnalités livrées
+
+- **Accueil** : bannière hero vidéo, présentation des services, chiffres clés, témoignages, partenariats, CTA.
+- **Services** : page détaillée avec **carte interactive du Togo** (5 régions), liste des 25 stations.
+- **Contact** : formulaire validé, carte Google Maps, horaires.
+- **Connexion** : page de connexion avec **3 rôles** (Admin, Gestionnaire, Client), redirection automatique.
+- **Espace Administrateur** : KPIs, gestion du réseau, gestionnaires, clients, newsletter, formations, partenariats.
+- **Espace Gestionnaire** : gestion des clients, véhicules, services, **facturation**, historique.
+- **Espace Client** : tableau de bord, gestion des véhicules, prise de RDV, profil, fidélité.
+- **Facturation** : création de factures (FAC-XXXX), statuts, modes de paiement (T-Money, Flooz, Espèces, Carte), suivi.
+- **Responsive** : site adapté à tous les écrans.
+
+### Pages du site
+
+| Page | Fichier | Contenu |
+|---|---|---|
+| Accueil | `index.html` | Hero vidéo, services, chiffres, témoignages, CTA |
+| Services | `pages/MaJ_service/service.html` | Carte interactive, stations, modal RDV |
+| Contact | `pages/contact.html` | Formulaire, carte, horaires |
+| Connexion | `pages/connexion.html` | 3 rôles, redirection automatique |
+| Espace Admin | `pages/admin/admin.html` | KPIs, réseau, gestionnaires, newsletter |
+| Espace Gestionnaire | `pages/gestionnaire/index.html` | Clients, véhicules, services, factures |
+| Espace Client | `pages/depot_serge/clients.html` | Tableau de bord, véhicules, RDV, profil |
 
 ---
 
-## 🔐 Rôles & Accès (Système de Connexion)
+## 2. Stack technique et architecture
+---
 
-La page `pages/connexion.html` permet de se connecter selon 3 rôles différents. Les identifiants de démonstration sont :
+## 2. Stack technique et architecture
+### Charte graphique (du cahier des charges)
+
+| Élément | Valeur |
+|---|---|
+| Couleur primaire | #FF4D2E (Orange dynamique) |
+| Couleur secondaire | #1A1A1A (Noir élégant) |
+| Couleur de fond | #F5F3EF (Crème) |
+| Police titres | Sans-serif (Arial, Helvetica) |
+| Police corps | Sans-serif (Arial, Helvetica) |
+| Icônes | Bootstrap Icons |
+
+---
+
+## 3. Installation & lancement
+
+Aucun build n'est nécessaire : le site est 100 % statique.
+
+### Option 1 — Ouvrir directement
+
+Ouvrez `index.html` dans votre navigateur (double-clic).
+
+### Option 2 — Serveur local (recommandé)
+
+```bash
+# Python
+python -m http.server 8000
+# puis ouvrir http://localhost:8000
+
+# Ou avec Node.js
+npx serve .
+---
+
+
+
+```markdown
+---
+
+## 4. Sécurité & bonnes pratiques
+
+- Validation de tous les formulaires côté client (e-mail, téléphone, dates, quantités).
+- Données personnelles stockées uniquement en local (démo) — aucune transmission.
+- `autocomplete` et attributs ARIA pour l'accessibilité.
+- HTML sémantique, `lang="fr"`, méta-descriptions, `alt` sur les images.
+- Sanitisation des entrées utilisateur (anti-XSS).
+- Session avec expiration automatique après 30 min d'inactivité.
+- Mots de passe hachés côté client (SHA-256 ou fallback).
+
+---
+
+## 5. Rôles & Accès (Système de Connexion)
 
 | Rôle | Email | Mot de passe | Redirection |
 | :--- | :--- | :--- | :--- |
@@ -68,43 +136,10 @@ La page `pages/connexion.html` permet de se connecter selon 3 rôles différents
 | **Gestionnaire** | `gestionnaire@bide.tg` | `password` | `pages/gestionnaire/index.html` |
 | **Client** | `client@bide.tg` | `password` | `pages/depot_serge/clients.html` |
 
-> 💡 *Le nom affiché dans les dashboards est récupéré via la session utilisateur (`sessionStorage`).*
-
 ---
 
-## 🛠️ Fonctionnalités Principales
+## 6. Module Spécifique : Facturation
 
-### 🌐 Site Public (index.html)
-- Hero vidéo plein écran.
-- Présentation des services (Parking, Location, Auto-école, Formation, Fidélité, Pièces).
-- Section Témoignages, Partenariats Écoles, Newsletter.
-- Footer complet avec horaires et réseaux sociaux.
-
-### 🗺️ Page Services (MaJ_service/service.html)
-- **Carte interactive du Togo** (SVG cliquable) pour sélectionner les 5 régions (Maritime, Plateaux, Centrale, Kara, Savanes).
-- Affichage dynamique des 25 stations avec horaires.
-- Modale de prise de rendez-vous.
-
-### 👑 Dashboard Administrateur (pages/admin)
-- Vue d'ensemble des KPIs (Clients, Gestionnaires, Stations, Demandes).
-- Gestion du **Réseau Togo** (5 régions, 25 villes, gestionnaires).
-- Gestion des Clients, Demandes de service, Stations de parking, Vente & Location.
-- Gestion des Formations, Carte de fidélité, Newsletter et Partenariats.
-- **Persistance des données** via `localStorage`.
-
-### 📊 Dashboard Gestionnaire (pages/gestionnaire)
-- Gestion complète des Clients, Véhicules, Services, Factures et Historiques.
-- Modales d'ajout avec formulaires dynamiques (options conditionnelles selon le type de service).
-- Recherche en temps réel dans les tableaux.
-
-### 👤 Espace Client (pages/depot_serge)
-- Tableau de bord avec statistiques personnelles.
-- Gestion des véhicules et prise de rendez-vous.
-- Consultation de l'historique des prestations et des tarifs.
-
----
-
-### 🔴 Module Spécifique : Facturation (Module Gestionnaire)
 - **Création de Facture :** Génération automatique de factures (FAC-XXXX) associées à un client, un véhicule et un service.
 - **Gestion du Statut :** Permettre de marquer une facture comme "Payée", "En attente" ou "Annulée".
 - **Calcul Automatique :** Afficher le montant total du service en FCFA.
@@ -113,28 +148,12 @@ La page `pages/connexion.html` permet de se connecter selon 3 rôles différents
 
 ---
 
-## 🎨 Technologies & Design
+## 7. Cahier des Charges
 
-- **HTML5** : Structure sémantique.
-- **CSS3** : Design moderne, responsive (Mobile-first) et animations.
-- **JavaScript (Vanilla)** : Interactivité, manipulation du DOM, persistance des données.
-- **Bootstrap 5** : Framework CSS pour la mise en page rapide.
-- **Bootstrap Icons & FontAwesome** : Icônes.
-- **SVG** : Carte interactive du Togo.
-
+Le cahier des charges complet (avec la partie facturation) est disponible dans le fichier `cahier_des_charges.md` (ou sur demande).
 ---
 
-## 🚀 Lancement du Projet
-
-1. **Téléchargez ou clonez** le dépôt GitHub.
-2. Ouvrez le dossier dans votre éditeur de code (VS Code recommandé).
-3. Pour une expérience optimale (éviter les erreurs de chemins), utilisez l'extension **Live Server** de VS Code ou lancez un serveur local (ex: `python -m http.server`).
-4. Ouvrez `index.html` pour accéder au site public.
-5. Rendez-vous sur `pages/connexion.html` pour tester les différents rôles.
-
----
-
-## 📊 Gestion de Projet, Rôles & Responsabilités
+## 8. Gestion de Projet, Rôles & Responsabilités
 
 | Membre | Rôle | Contribution Principale |
 | :--- | :--- | :--- |
@@ -147,7 +166,13 @@ La page `pages/connexion.html` permet de se connecter selon 3 rôles différents
 
 ---
 
-## 📝 Auteurs & Licence
+## 9. Livrables & Démonstration
 
-Projet développé dans le cadre de la plateforme **Bidè - AKIMMAKO Auto Services**.
-© 2026 Bidè / AKIMMAKO Auto Services. Tous droits réservés.
+- 🔗 **Dépôt GitHub :** [https://github.com/rovana-0412/PROJET_BIDE](https://github.com/rovana-0412/PROJET_BIDE)
+- 🌐 **Plateforme web fonctionnelle :** [https://bide-akimmako.netlify.app/](https://bide-akimmako.netlify.app/)
+- 📄 **Cahier des charges détaillé :** Disponible dans le dossier `cahier_des_charges.md` (ou sur demande)
+- 📊 **Historique des commits & Rôles :** Visible sur l'onglet "Insights" → "Contributors" de votre GitHub
+
+---
+
+© 2026 Bidè — AKIMMAKO Auto Services. Projet pédagogique réalisé par une équipe de 4 développeurs.

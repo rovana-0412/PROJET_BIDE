@@ -9,17 +9,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- Feuille de style CSS -->
+    <!-- Feuille de style CSS (Corrigé : plus de CSS/) -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     
-    <!--  PRINCIPALE  -->
+    <!--  APPLICATION PRINCIPALE (Connexion supprimée, affichage direct) -->
     <div id="application-principale" class="structure-app">
       <!-- BARRE LATÉRALE -->
       <aside class="barre-laterale">
         <div class="logo-barre">
-          <img src="Images/logo.png" alt="logo du site" />
+          <img src="Images/logo.png" alt="Logo Bidè Auto Services" />
           <h2>Bidè</h2>
         </div>
         <nav class="menu-navigation">
@@ -28,6 +28,12 @@
           </a>
           <a href="#" class="lien-navigation" data-cible="vehicules">
             <i class="fa-solid fa-car"></i> Mes Véhicules
+          </a>
+          <a href="#" class="lien-navigation" data-cible="services-groupes">
+            <i class="fa-solid fa-list-check"></i> Services & Prestations
+          </a>
+          <a href="#" class="lien-navigation" data-cible="fidelite">
+            <i class="fa-solid fa-award"></i> Carte de Fidélité
           </a>
           <a href="#" class="lien-navigation" data-cible="tarifs">
             <i class="fa-solid fa-tags"></i> Tarifs & Prestations
@@ -39,21 +45,40 @@
             <i class="fa-solid fa-clock-rotate-left"></i> Historique
           </a>
         </nav>
-        <div class="profil-utilisateur-menu">
-          <i class="fa-solid fa-user-circle avatar-icone"></i>
+
+        <!-- PROFIL CLIQUABLE -->
+        <div
+          class="profil-utilisateur-menu lien-navigation"
+          data-cible="profil"
+        >
+          <div class="conteneur-avatar-menu">
+            <i
+              class="fa-solid fa-user-circle avatar-icone"
+              id="avatar-icone-menu"
+            ></i>
+            <img
+              src=""
+              id="avatar-img-menu"
+              class="avatar-image masque"
+              alt="Photo de profil"
+            />
+          </div>
           <div class="infos-utilisateur">
-            <span class="nom-utilisateur">Jean-Marc Koffi</span>
+            <span class="nom-utilisateur" id="nom-utilisateur-affichage"
+              >Jean-Marc Koffi</span
+            >
+            <small class="texte-mon-profil">Mon Profil</small>
           </div>
         </div>
       </aside>
 
       <!-- CONTENU PRINCIPAL -->
       <main class="contenu-principal">
-        <!-- ECRAN 2: TABLEAU DE BORD -->
+        <!-- ECRAN: TABLEAU DE BORD -->
         <section id="ecran-tableau-bord" class="ecran-section">
           <header class="entete-page">
             <div>
-              <h2>Bonjour, Jean-Marc</h2>
+              <h2>Bonjour, <span class="prenom-dyn">Jean-Marc</span></h2>
               <p>Bienvenue sur votre espace client personnalisé.</p>
             </div>
             <button class="bouton-orange-icone action-vers-rdv">
@@ -62,7 +87,7 @@
           </header>
 
           <div class="banniere-rappel">
-            <div>
+            <div class="message-rappel">
               <i class="fa-solid fa-circle-exclamation"></i>
               <span>Entretien annuel recommandé bientôt !</span>
             </div>
@@ -75,50 +100,143 @@
             <div class="carte-stat">
               <i class="fa-solid fa-car"></i>
               <div>
-                <span class="nombre-stat">2 Véhicules</span>
+                <span class="nombre-stat" id="stat-vehicules-nb"
+                  >2 Véhicules</span
+                >
                 <span class="libelle-stat">Enregistrés au garage</span>
               </div>
             </div>
             <div class="carte-stat">
               <i class="fa-solid fa-calendar"></i>
               <div>
-                <span class="nombre-stat">19 Déc 2024 à 14h00</span>
-                <span class="libelle-stat">Prochain RDV - Lavage complet</span>
+                <span class="nombre-stat" id="stat-prochain-rdv"
+                  >--/--/----</span
+                >
+                <span class="libelle-stat">Prochain RDV</span>
               </div>
             </div>
             <div class="carte-stat">
               <i class="fa-solid fa-wrench"></i>
               <div>
-                <span class="nombre-stat">14 Interventions</span>
+                <span class="nombre-stat" id="stat-interventions-nb"
+                  >2 Interventions</span
+                >
                 <span class="libelle-stat">Historique cumulé</span>
+              </div>
+            </div>
+            <div class="carte-stat">
+              <i class="fa-solid fa-award"></i>
+              <div>
+                <span class="nombre-stat" id="stat-fidelite-badge"
+                  >Non éligible</span
+                >
+                <span class="libelle-stat">Statut Fidélité</span>
               </div>
             </div>
           </div>
 
           <div class="bloc-activites-recentes">
             <h3>Activités récentes</h3>
-            <div class="liste-activites">
-              <div class="element-activite">
-                <i class="fa-solid fa-shower icone-act"></i>
-                <div class="info-act">
-                  <strong>Lavage Intérieur & Extérieur</strong>
-                  <small>Peugeot 208 - TG-1234-AZ</small>
-                </div>
-                <span class="badge-statut effectue">Effectué</span>
-              </div>
-              <div class="element-activite">
-                <i class="fa-solid fa-oil-can icone-act"></i>
-                <div class="info-act">
-                  <strong>Vidange Moteur + Filtre à huile</strong>
-                  <small>Toyota RAV4 - TG-5678-BX</small>
-                </div>
-                <span class="badge-statut effectue">Effectué</span>
-              </div>
+            <div class="liste-activites" id="liste-activites-recentes">
+              <!-- Dynamique via JS -->
             </div>
           </div>
         </section>
 
-        <!--  MES VÉHICULES -->
+        <!-- ECRAN: MON PROFIL -->
+        <section id="ecran-profil" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Mon Profil Client</h2>
+              <p>
+                Gérez vos données personnelles, vos coordonnées et votre photo
+                de profil.
+              </p>
+            </div>
+          </header>
+
+          <div class="disposition-deux-colonnes">
+            <!-- CARTE PHOTO DE PROFIL -->
+            <div class="carte-profil-photo">
+              <div class="apercu-avatar-bloc">
+                <i
+                  class="fa-solid fa-user-circle avatar-icone-grand"
+                  id="avatar-icone-profil"
+                ></i>
+                <img
+                  src=""
+                  id="avatar-img-profil"
+                  class="avatar-image-grande masque"
+                  alt="Photo de profil"
+                />
+              </div>
+              <h3 id="profil-nom-carte">Jean-Marc Koffi</h3>
+              <p id="profil-email-carte" class="email-discret">
+                client@bide.com
+              </p>
+
+              <div class="bloc-upload-photo">
+                <label
+                  for="input-photo-profil"
+                  class="bouton-secondaire label-upload"
+                >
+                  <i class="fa-solid fa-camera"></i> Changer la photo
+                </label>
+                <input
+                  type="file"
+                  id="input-photo-profil"
+                  accept="image/*"
+                  class="masque"
+                />
+                <button
+                  type="button"
+                  id="btn-supprimer-photo"
+                  class="bouton-danger masque"
+                >
+                  Supprimer la photo
+                </button>
+              </div>
+            </div>
+
+            <!-- FORMULAIRE COORDONNÉES -->
+            <div class="carte-formulaire-ajout">
+              <h3>Mes Coordonnées</h3>
+              <form id="form-modifier-profil">
+                <div class="groupe-champ">
+                  <label for="profil-input-nom">Nom complet</label>
+                  <input type="text" id="profil-input-nom" required />
+                </div>
+                <div class="groupe-champ">
+                  <label for="profil-input-email">Adresse E-mail</label>
+                  <input type="email" id="profil-input-email" required />
+                </div>
+                <div class="groupe-champ">
+                  <label for="profil-input-telephone"
+                    >Numéro de Téléphone</label
+                  >
+                  <input
+                    type="tel"
+                    id="profil-input-telephone"
+                    placeholder="Ex: +228 90 00 00 00"
+                  />
+                </div>
+                <div class="groupe-champ">
+                  <label for="profil-input-adresse">Adresse de résidence</label>
+                  <input
+                    type="text"
+                    id="profil-input-adresse"
+                    placeholder="Ex: Lomé, Quartier Hedzranawoé"
+                  />
+                </div>
+                <button type="submit" class="bouton-principal">
+                  Enregistrer les modifications
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ECRAN: MES VÉHICULES -->
         <section id="ecran-vehicules" class="ecran-section masque">
           <header class="entete-page">
             <div>
@@ -138,16 +256,26 @@
               <h3>Ajouter un véhicule</h3>
               <form id="form-ajout-vehicule">
                 <div class="groupe-champ">
-                  <label>Marque et Modèle</label>
-                  <input type="text" placeholder="Ex: Peugeot 208" required />
+                  <label for="vehicule-marque">Marque et Modèle</label>
+                  <input
+                    type="text"
+                    id="vehicule-marque"
+                    placeholder="Ex: Peugeot 208"
+                    required
+                  />
                 </div>
                 <div class="groupe-champ">
-                  <label>Immatriculation</label>
-                  <input type="text" placeholder="Ex: TG-1234-AZ" required />
+                  <label for="vehicule-immatriculation">Immatriculation</label>
+                  <input
+                    type="text"
+                    id="vehicule-immatriculation"
+                    placeholder="Ex: TG-1234-AZ"
+                    required
+                  />
                 </div>
                 <div class="groupe-champ">
-                  <label>Catégorie</label>
-                  <select required>
+                  <label for="vehicule-categorie">Catégorie</label>
+                  <select id="vehicule-categorie" required>
                     <option value="citadine">Citadine / Berline</option>
                     <option value="suv">SUV / 4x4</option>
                     <option value="utilitaire">Utilitaire</option>
@@ -161,7 +289,256 @@
           </div>
         </section>
 
-        <!--  CATALOGUE PRESTATIONS & TARIFS -->
+        <!-- ECRAN: SERVICES GROUPÉS -->
+        <section id="ecran-services-groupes" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Nos Services & Prestations Complémentaires</h2>
+              <p>
+                Parking, Vente/Location, Auto-école, Formations, Pièces et
+                Partenariats.
+              </p>
+            </div>
+          </header>
+
+          <div class="grille-services">
+            <!-- PARKING -->
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-square-parking"></i>
+                <h3>Parking Voiture Gardé</h3>
+              </div>
+              <p class="description-service">
+                Stationnement sécurisé pour véhicules sans garage à domicile.
+              </p>
+              <form id="form-parking">
+                <div class="groupe-champ">
+                  <label for="parking-type-forfait">Forfait</label>
+                  <select id="parking-type-forfait" required>
+                    <option value="Forfait Nuit (1 500 F CFA)">
+                      Forfait Nuit - 1 500 F CFA
+                    </option>
+                    <option value="Forfait Journée (3 000 F CFA)">
+                      Forfait Journée - 3 000 F CFA
+                    </option>
+                    <option value="Abonnement Mensuel (35 000 F CFA)">
+                      Abonnement Mensuel - 35 000 F CFA
+                    </option>
+                  </select>
+                </div>
+                <div class="groupe-champ">
+                  <label for="parking-select-vehicule">Véhicule</label>
+                  <select id="parking-select-vehicule" required></select>
+                </div>
+                <button type="submit" class="bouton-principal">
+                  Réserver ma place
+                </button>
+              </form>
+            </div>
+
+            <!-- VENTE & LOCATION -->
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-car-side"></i>
+                <h3>Vente & Location de Voitures</h3>
+              </div>
+              <p class="description-service">
+                Location de véhicules révisés ou achat d'occasions garanties.
+              </p>
+              <div class="groupe-boutons-verticaux">
+                <button
+                  class="bouton-principal btn-action-voiture"
+                  data-titre="Location Berline Toyota"
+                >
+                  Location Toyota (25 000 F CFA/j)
+                </button>
+                <button
+                  class="bouton-principal btn-action-voiture"
+                  data-titre="Location SUV 4x4"
+                >
+                  Location 4x4 (60 000 F CFA/j)
+                </button>
+                <button
+                  class="bouton-principal btn-action-voiture"
+                  data-titre="Achat Véhicule d'Occasion"
+                >
+                  Acheter un véhicule
+                </button>
+              </div>
+            </div>
+
+            <!-- AUTO-ÉCOLE -->
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Auto-école & Formations</h3>
+              </div>
+              <p class="description-service">
+                Inscription en ligne pour cours de conduite, mécanique et
+                climatisation.
+              </p>
+              <form id="form-inscription-formation">
+                <div class="groupe-champ">
+                  <label for="formation-nom">Nom</label>
+                  <input
+                    type="text"
+                    id="formation-nom"
+                    placeholder="Votre nom"
+                    required
+                  />
+                </div>
+                <div class="groupe-champ">
+                  <label for="formation-prenoms">Prénoms</label>
+                  <input
+                    type="text"
+                    id="formation-prenoms"
+                    placeholder="Vos prénoms"
+                    required
+                  />
+                </div>
+                <div class="groupe-champ">
+                  <label for="formation-type">Formation Choisie</label>
+                  <select id="formation-type" required>
+                    <option value="Auto-école (Permis B)">
+                      Auto-école (Permis B)
+                    </option>
+                    <option value="Mécanique Automobile">
+                      Mécanique Automobile Pro
+                    </option>
+                    <option value="Engins Lourds">Engins Lourds</option>
+                    <option value="Froid & Climatisation">
+                      Froid & Climatisation Auto
+                    </option>
+                  </select>
+                </div>
+                <div class="groupe-champ">
+                  <label for="formation-horaire">Créneau de Cours</label>
+                  <select id="formation-horaire" required>
+                    <option value="Cours du Jour (08h00 - 12h00)">
+                      Cours du Jour (08h00 - 12h00)
+                    </option>
+                    <option value="Cours du Soir (18h00 - 20h30)">
+                      Cours du Soir (18h00 - 20h30)
+                    </option>
+                  </select>
+                </div>
+                <div class="groupe-champ">
+                  <label for="formation-paiement">Option de Paiement</label>
+                  <select id="formation-paiement" required>
+                    <option value="Paiement en ligne (Mobile Money / Carte)">
+                      Paiement en ligne (T-Money / Flooz / Carte)
+                    </option>
+                    <option value="Paiement Tranche 1 (Acompte 50%)">
+                      Paiement par Tranches (Acompte 50%)
+                    </option>
+                    <option value="Paiement en espèces sur place">
+                      Paiement en espèces au guichet
+                    </option>
+                  </select>
+                </div>
+                <button type="submit" class="bouton-principal">
+                  Valider mon inscription
+                </button>
+              </form>
+            </div>
+
+            <!-- PARTENARIATS -->
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Partenariat Écoles & Stages</h3>
+              </div>
+              <p class="description-service">
+                Accueil de stagiaires venant des écoles partenaires pour
+                pratique professionnelle.
+              </p>
+              <form id="form-demande-stage">
+                <div class="groupe-champ">
+                  <label for="stage-ecole">Nom de l'établissement</label>
+                  <input
+                    type="text"
+                    id="stage-ecole"
+                    placeholder="Ex: Lycée Technique"
+                    required
+                  />
+                </div>
+                <div class="groupe-champ">
+                  <label for="stage-filiere">Filière</label>
+                  <input
+                    type="text"
+                    id="stage-filiere"
+                    placeholder="Ex: Mécanique"
+                    required
+                  />
+                </div>
+                <button type="submit" class="bouton-principal">
+                  Soumettre demande de stage
+                </button>
+              </form>
+            </div>
+
+            <!-- PIÈCES DÉTACHÉES -->
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Vente de Pièces Détachées</h3>
+              </div>
+              <p class="description-service">
+                Vente en gros aux garages et aux propriétaires d'engins.
+              </p>
+              <form id="form-achat-pieces">
+                <div class="groupe-champ">
+                  <label for="pieces-profil">Profil</label>
+                  <select id="pieces-profil" required>
+                    <option value="Grossiste Garage">Grossiste / Garage</option>
+                    <option value="Propriétaire Engins">
+                      Propriétaire d'Engins / Particulier
+                    </option>
+                  </select>
+                </div>
+                <div class="groupe-champ">
+                  <label for="pieces-description">Pièces recherchées</label>
+                  <input
+                    type="text"
+                    id="pieces-description"
+                    placeholder="Ex: Filtres, Pompes, Freins..."
+                    required
+                  />
+                </div>
+                <button type="submit" class="bouton-principal">
+                  Demander un devis pièces
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ECRAN: CARTE DE FIDÉLITÉ -->
+        <section id="ecran-fidelite" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Programme de Fidélité</h2>
+              <p>
+                Carte attribuée par le gestionnaire pour nos clients effectuant
+                plus de 4 prestations.
+              </p>
+            </div>
+          </header>
+
+          <div class="carte-recapitulatif carte-fidelite-centre">
+            <i class="fa-solid fa-award icone-fidelite"></i>
+            <h3>Attribution de la Carte de Fidélité</h3>
+            <p class="texte-compteur">
+              Nombre total d'interventions cumulées :
+              <strong id="compteur-visites-fidelite">0</strong>
+            </p>
+            <div id="statut-fidelite-message">
+              <!-- Dynamique via JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ECRAN: PRESTATIONS & TARIFS -->
         <section id="ecran-tarifs" class="ecran-section masque">
           <header class="entete-page">
             <div>
@@ -184,18 +561,20 @@
                 soin des pneus.
               </p>
               <table class="tableau-tarifs">
-                <tr>
-                  <td>Citadine</td>
-                  <td><strong>5 000 F CFA</strong></td>
-                </tr>
-                <tr>
-                  <td>SUV / 4x4</td>
-                  <td><strong>8 000 F CFA</strong></td>
-                </tr>
-                <tr>
-                  <td>Utilitaire</td>
-                  <td><strong>12 000 F CFA</strong></td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>Citadine</td>
+                    <td><strong>5 000 F CFA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>SUV / 4x4</td>
+                    <td><strong>8 000 F CFA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Utilitaire</td>
+                    <td><strong>12 000 F CFA</strong></td>
+                  </tr>
+                </tbody>
               </table>
               <button class="bouton-principal action-vers-rdv">
                 Réserver ce service
@@ -212,18 +591,20 @@
                 sécurisé.
               </p>
               <table class="tableau-tarifs">
-                <tr>
-                  <td>Zone Urbaine</td>
-                  <td><strong>15 000 F CFA</strong></td>
-                </tr>
-                <tr>
-                  <td>Zone Périurbaine</td>
-                  <td><strong>25 000 F CFA</strong></td>
-                </tr>
-                <tr>
-                  <td>Hors Ville</td>
-                  <td><strong>Sur devis</strong></td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>Zone Urbaine</td>
+                    <td><strong>15 000 F CFA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Zone Périurbaine</td>
+                    <td><strong>25 000 F CFA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Hors Ville</td>
+                    <td><strong>Sur devis</strong></td>
+                  </tr>
+                </tbody>
               </table>
               <button class="bouton-principal action-vers-rdv">
                 Réserver ce service
@@ -240,18 +621,20 @@
                 des freins.
               </p>
               <table class="tableau-tarifs">
-                <tr>
-                  <td>Vidange Simple</td>
-                  <td><strong>20 000 F CFA</strong></td>
-                </tr>
-                <tr>
-                  <td>Révision Complète</td>
-                  <td><strong>45 000 F CFA</strong></td>
-                </tr>
-                <tr>
-                  <td>Diagnostic Électronique</td>
-                  <td><strong>15 000 F CFA</strong></td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td>Vidange Simple</td>
+                    <td><strong>20 000 F CFA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Révision Complète</td>
+                    <td><strong>45 000 F CFA</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Diagnostic Électronique</td>
+                    <td><strong>15 000 F CFA</strong></td>
+                  </tr>
+                </tbody>
               </table>
               <button class="bouton-principal action-vers-rdv">
                 Réserver ce service
@@ -260,7 +643,7 @@
           </div>
         </section>
 
-        <!--  PRENDRE UN RDV -->
+        <!-- ECRAN: PRENDRE UN RDV -->
         <section id="ecran-rdv" class="ecran-section masque">
           <header class="entete-page">
             <div>
@@ -277,55 +660,63 @@
               <div class="bloc-etape">
                 <h4>1. Sélectionnez le service</h4>
                 <div class="choix-services">
-                  <label
-                    ><input
+                  <label class="option-radio">
+                    <input
                       type="radio"
                       name="service"
                       value="Lavage Automobile"
                       checked
                     />
-                    Lavage Automobile</label
-                  ><br />
-                  <label
-                    ><input type="radio" name="service" value="Remorquage" />
-                    Remorquage</label
-                  ><br />
-                  <label
-                    ><input
+                    <span>Lavage Automobile</span>
+                  </label>
+                  <label class="option-radio">
+                    <input type="radio" name="service" value="Remorquage" />
+                    <span>Remorquage</span>
+                  </label>
+                  <label class="option-radio">
+                    <input
                       type="radio"
                       name="service"
                       value="Visite Mécanique"
                     />
-                    Visite Mécanique</label
-                  >
+                    <span>Visite Mécanique</span>
+                  </label>
                 </div>
               </div>
 
-              <div class="bloc-etape" style="margin-top: 15px">
+              <div class="bloc-etape">
                 <h4>2. Choisissez le véhicule</h4>
-                <select style="width: 100%; padding: 8px">
-                  <!-- Rempli dynamiquement par JS -->
-                </select>
+                <div class="groupe-champ">
+                  <select id="rdv-select-vehicule" required>
+                    <!-- Rempli dynamiquement par JS -->
+                  </select>
+                </div>
               </div>
 
-              <div class="bloc-etape" style="margin-top: 15px">
+              <div class="bloc-etape">
                 <h4>3. Date et Horaire du RDV</h4>
-                <input type="date" required style="padding: 8px" />
-                <select style="padding: 8px">
-                  <option>08:00</option>
-                  <option>10:00</option>
-                  <option>14:00</option>
-                  <option>16:00</option>
-                </select>
+                <div class="groupe-champs-ligne">
+                  <div class="groupe-champ">
+                    <label for="rdv-date">Date</label>
+                    <input type="date" id="rdv-date" required />
+                  </div>
+                  <div class="groupe-champ">
+                    <label for="rdv-heure">Heure</label>
+                    <select id="rdv-heure" required>
+                      <option value="08:00">08:00</option>
+                      <option value="10:00">10:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="16:00">16:00</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </form>
 
             <div class="carte-recapitulatif">
               <h3>Récapitulatif du RDV</h3>
-              <p style="margin: 10px 0">
-                Service : <strong>Lavage Automobile</strong>
-              </p>
-              <p>Véhicule : <strong>Peugeot 208</strong></p>
+              <p>Service : <strong>Lavage Automobile</strong></p>
+              <p>Véhicule : <strong>Aucun</strong></p>
               <p>Total Estimé : <strong>5 000 F CFA</strong></p>
               <button
                 type="button"
@@ -338,7 +729,7 @@
           </div>
         </section>
 
-        <!-- HISTORIQUE -->
+        <!-- ECRAN: HISTORIQUE -->
         <section id="ecran-historique" class="ecran-section masque">
           <header class="entete-page">
             <div>
@@ -365,7 +756,7 @@
       </main>
     </div>
 
-    <!-- Chargement du JavaScript en bas de page -->
+    <!-- Chargement du JavaScript (Corrigé : plus de JS/) -->
     <script src="script.js"></script>
   </body>
 </html>

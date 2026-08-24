@@ -26,17 +26,17 @@ Ce dépôt contient l'intégralité de la plateforme : **site public**, **carte 
       Scrum Master / Développeuse
     </td>
     <td align="center">
-      <img src="images/einstein.jpeg" width="120px"><br>
+      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/einstein.jpeg?raw=true" width="120px"><br>
       <b>CAMARA Guy Mari Mohamed</b><br>
       Développeur
     </td>
     <td align="center">
-      <img src="images/serge.jpeg" width="120px"><br>
+      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/serge.jpeg?raw=true" width="120px"><br>
       <b>CHAOLD Komi Serge</b><br>
       Développeur / UI
     </td>
     <td align="center">
-      <img src="images/cedric.jpg" width="120px"><br>
+      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/cedric.jpg?raw=true" width="120px"><br>
       <b>APETOH Yannick-Eudes Cédric</b><br>
       Développeur
     </td>

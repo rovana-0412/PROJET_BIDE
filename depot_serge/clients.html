@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bidè - Espace Client</title>
+    <!-- Icônes FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Feuille de style CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+  </head>
+  <body>
+    <!-- CONNEXION & INSCRIPTION -->
+    <div id="ecran-connexion" class="page-connexion">
+      <div class="colonne-presentation">
+        <div class="contenu-presentation">
+          <h1>Lavage & Services Auto d'Excellence</h1>
+          <p>
+            Votre partenaire de confiance pour l'entretien, le lavage et
+            l'assistance automobile.
+          </p>
+          <div class="logo-bide">
+            <h2>Bidè</h2>
+            <span>AUTO SERVICES</span>
+          </div>
+        </div>
+      </div>
+      <div class="colonne-formulaire">
+        <div class="carte-connexion">
+          <h2>Espace Client</h2>
+          <p class="sous-titre">Connectez-vous pour gérer vos réservations</p>
+
+          <form id="formulaire-connexion">
+            <div class="groupe-champ">
+              <label>Adresse E-mail</label>
+              <input
+                type="email"
+                placeholder="votre.email@exemple.com"
+                value="client@bide.com"
+                required
+              />
+            </div>
+            <div class="groupe-champ">
+              <div class="label-mdp">
+                <label>Mot de passe</label>
+                <a href="#">Mot de passe oublié ?</a>
+              </div>
+              <input
+                type="password"
+                placeholder="••••••••"
+                value="123456"
+                required
+              />
+            </div>
+            <button
+              type="button"
+              id="bouton-se-connecter"
+              class="bouton-principal"
+            >
+              Se connecter
+            </button>
+            <p class="lien-inscription">
+              Nouveau client ? <a href="#">Créer un compte</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--  PRINCIPALE  -->
+    <div id="application-principale" class="structure-app masque">
+      <!-- BARRE LATÉRALE -->
+      <aside class="barre-laterale">
+        <div class="logo-barre">
+          <img src="Images/logo.png" alt="logo du site" />
+          <h2>Bidè</h2>
+        </div>
+        <nav class="menu-navigation">
+          <a href="#" class="lien-navigation actif" data-cible="tableau-bord">
+            <i class="fa-solid fa-chart-pie"></i> Tableau de bord
+          </a>
+          <a href="#" class="lien-navigation" data-cible="vehicules">
+            <i class="fa-solid fa-car"></i> Mes Véhicules
+          </a>
+          <a href="#" class="lien-navigation" data-cible="tarifs">
+            <i class="fa-solid fa-tags"></i> Tarifs & Prestations
+          </a>
+          <a href="#" class="lien-navigation" data-cible="rdv">
+            <i class="fa-solid fa-calendar-check"></i> Prendre un RDV
+          </a>
+          <a href="#" class="lien-navigation" data-cible="historique">
+            <i class="fa-solid fa-clock-rotate-left"></i> Historique
+          </a>
+        </nav>
+        <div class="profil-utilisateur-menu">
+          <i class="fa-solid fa-user-circle avatar-icone"></i>
+          <div class="infos-utilisateur">
+            <span class="nom-utilisateur">Jean-Marc Koffi</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTENU PRINCIPAL -->
+      <main class="contenu-principal">
+        <!-- ECRAN 2: TABLEAU DE BORD -->
+        <section id="ecran-tableau-bord" class="ecran-section">
+          <header class="entete-page">
+            <div>
+              <h2>Bonjour, Jean-Marc</h2>
+              <p>Bienvenue sur votre espace client personnalisé.</p>
+            </div>
+            <button class="bouton-orange-icone action-vers-rdv">
+              <i class="fa-solid fa-plus"></i> Réserver un service
+            </button>
+          </header>
+
+          <div class="banniere-rappel">
+            <div>
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span>Entretien annuel recommandé bientôt !</span>
+            </div>
+            <button class="bouton-blanc-petit action-vers-rdv">
+              Prendre RDV
+            </button>
+          </div>
+
+          <div class="grille-statistiques">
+            <div class="carte-stat">
+              <i class="fa-solid fa-car"></i>
+              <div>
+                <span class="nombre-stat">2 Véhicules</span>
+                <span class="libelle-stat">Enregistrés au garage</span>
+              </div>
+            </div>
+            <div class="carte-stat">
+              <i class="fa-solid fa-calendar"></i>
+              <div>
+                <span class="nombre-stat">19 Déc 2024 à 14h00</span>
+                <span class="libelle-stat">Prochain RDV - Lavage complet</span>
+              </div>
+            </div>
+            <div class="carte-stat">
+              <i class="fa-solid fa-wrench"></i>
+              <div>
+                <span class="nombre-stat">14 Interventions</span>
+                <span class="libelle-stat">Historique cumulé</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bloc-activites-recentes">
+            <h3>Activités récentes</h3>
+            <div class="liste-activites">
+              <div class="element-activite">
+                <i class="fa-solid fa-shower icone-act"></i>
+                <div class="info-act">
+                  <strong>Lavage Intérieur & Extérieur</strong>
+                  <small>Peugeot 208 - TG-1234-AZ</small>
+                </div>
+                <span class="badge-statut effectue">Effectué</span>
+              </div>
+              <div class="element-activite">
+                <i class="fa-solid fa-oil-can icone-act"></i>
+                <div class="info-act">
+                  <strong>Vidange Moteur + Filtre à huile</strong>
+                  <small>Toyota RAV4 - TG-5678-BX</small>
+                </div>
+                <span class="badge-statut effectue">Effectué</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  MES VÉHICULES -->
+        <section id="ecran-vehicules" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Mes Véhicules</h2>
+              <p>
+                Gérez vos véhicules enregistrés pour accélérer vos réservations.
+              </p>
+            </div>
+          </header>
+
+          <div class="disposition-deux-colonnes">
+            <div class="liste-cartes-vehicules">
+              <!-- Rempli dynamiquement par JS -->
+            </div>
+
+            <div class="carte-formulaire-ajout">
+              <h3>Ajouter un véhicule</h3>
+              <form id="form-ajout-vehicule">
+                <div class="groupe-champ">
+                  <label>Marque et Modèle</label>
+                  <input type="text" placeholder="Ex: Peugeot 208" required />
+                </div>
+                <div class="groupe-champ">
+                  <label>Immatriculation</label>
+                  <input type="text" placeholder="Ex: TG-1234-AZ" required />
+                </div>
+                <div class="groupe-champ">
+                  <label>Catégorie</label>
+                  <select required>
+                    <option value="citadine">Citadine / Berline</option>
+                    <option value="suv">SUV / 4x4</option>
+                    <option value="utilitaire">Utilitaire</option>
+                  </select>
+                </div>
+                <button type="submit" class="bouton-principal">
+                  Enregistrer le véhicule
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!--  CATALOGUE PRESTATIONS & TARIFS -->
+        <section id="ecran-tarifs" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Prestations & Tarifs</h2>
+              <p>
+                Découvrez nos services d'entretien automobile et nos grilles
+                tarifaires.
+              </p>
+            </div>
+          </header>
+
+          <div class="grille-services">
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-soap"></i>
+                <h3>Lavage Automobile</h3>
+              </div>
+              <p class="description-service">
+                Nettoyage haute pression, aspiration intérieure, lustrage et
+                soin des pneus.
+              </p>
+              <table class="tableau-tarifs">
+                <tr>
+                  <td>Citadine</td>
+                  <td><strong>5 000 F CFA</strong></td>
+                </tr>
+                <tr>
+                  <td>SUV / 4x4</td>
+                  <td><strong>8 000 F CFA</strong></td>
+                </tr>
+                <tr>
+                  <td>Utilitaire</td>
+                  <td><strong>12 000 F CFA</strong></td>
+                </tr>
+              </table>
+              <button class="bouton-principal action-vers-rdv">
+                Réserver ce service
+              </button>
+            </div>
+
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-truck-monster"></i>
+                <h3>Remorquage & Assistance</h3>
+              </div>
+              <p class="description-service">
+                Intervention rapide 24h/7d pour dépannage et remorquage
+                sécurisé.
+              </p>
+              <table class="tableau-tarifs">
+                <tr>
+                  <td>Zone Urbaine</td>
+                  <td><strong>15 000 F CFA</strong></td>
+                </tr>
+                <tr>
+                  <td>Zone Périurbaine</td>
+                  <td><strong>25 000 F CFA</strong></td>
+                </tr>
+                <tr>
+                  <td>Hors Ville</td>
+                  <td><strong>Sur devis</strong></td>
+                </tr>
+              </table>
+              <button class="bouton-principal action-vers-rdv">
+                Réserver ce service
+              </button>
+            </div>
+
+            <div class="carte-service">
+              <div class="entete-service">
+                <i class="fa-solid fa-wrench"></i>
+                <h3>Visite Mécanique</h3>
+              </div>
+              <p class="description-service">
+                Diagnostic complet, vidange, révision générale et vérification
+                des freins.
+              </p>
+              <table class="tableau-tarifs">
+                <tr>
+                  <td>Vidange Simple</td>
+                  <td><strong>20 000 F CFA</strong></td>
+                </tr>
+                <tr>
+                  <td>Révision Complète</td>
+                  <td><strong>45 000 F CFA</strong></td>
+                </tr>
+                <tr>
+                  <td>Diagnostic Électronique</td>
+                  <td><strong>15 000 F CFA</strong></td>
+                </tr>
+              </table>
+              <button class="bouton-principal action-vers-rdv">
+                Réserver ce service
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!--  PRENDRE UN RDV -->
+        <section id="ecran-rdv" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Prendre un Rendez-vous</h2>
+              <p>
+                Sélectionnez un service, choisissez une date et confirmez votre
+                réservation.
+              </p>
+            </div>
+          </header>
+
+          <div class="disposition-deux-colonnes">
+            <form class="formulaire-rdv-grand">
+              <div class="bloc-etape">
+                <h4>1. Sélectionnez le service</h4>
+                <div class="choix-services">
+                  <label
+                    ><input
+                      type="radio"
+                      name="service"
+                      value="Lavage Automobile"
+                      checked
+                    />
+                    Lavage Automobile</label
+                  ><br />
+                  <label
+                    ><input type="radio" name="service" value="Remorquage" />
+                    Remorquage</label
+                  ><br />
+                  <label
+                    ><input
+                      type="radio"
+                      name="service"
+                      value="Visite Mécanique"
+                    />
+                    Visite Mécanique</label
+                  >
+                </div>
+              </div>
+
+              <div class="bloc-etape" style="margin-top: 15px">
+                <h4>2. Choisissez le véhicule</h4>
+                <select style="width: 100%; padding: 8px">
+                  <!-- Rempli dynamiquement par JS -->
+                </select>
+              </div>
+
+              <div class="bloc-etape" style="margin-top: 15px">
+                <h4>3. Date et Horaire du RDV</h4>
+                <input type="date" required style="padding: 8px" />
+                <select style="padding: 8px">
+                  <option>08:00</option>
+                  <option>10:00</option>
+                  <option>14:00</option>
+                  <option>16:00</option>
+                </select>
+              </div>
+            </form>
+
+            <div class="carte-recapitulatif">
+              <h3>Récapitulatif du RDV</h3>
+              <p style="margin: 10px 0">
+                Service : <strong>Lavage Automobile</strong>
+              </p>
+              <p>Véhicule : <strong>Peugeot 208</strong></p>
+              <p>Total Estimé : <strong>5 000 F CFA</strong></p>
+              <button
+                type="button"
+                id="bouton-confirmer-rdv"
+                class="bouton-principal"
+              >
+                Confirmer le RDV
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- HISTORIQUE -->
+        <section id="ecran-historique" class="ecran-section masque">
+          <header class="entete-page">
+            <div>
+              <h2>Historique des Prestations</h2>
+              <p>Retrouvez toutes vos interventions passées et en cours.</p>
+            </div>
+          </header>
+
+          <div class="conteneur-tableau">
+            <table class="tableau-historique">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Prestation</th>
+                  <th>Véhicule</th>
+                  <th>Montant</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Chargement du JavaScript en bas de page -->
+    <script src="JS/script.js"></script>
+  </body>
+</html>

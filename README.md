@@ -21,28 +21,27 @@ Ce dépôt contient l'intégralité de la plateforme : **site public**, **carte 
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/claudia.jpeg?raw=true" width="120px"><br>
+      <img src="Images/claudia.jpeg" width="120px"><br>
       <b>AKUESON Adoudé Claudia Rovana</b><br>
       Scrum Master / Développeuse
     </td>
     <td align="center">
-      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/einstein.jpeg?raw=true" width="120px"><br>
+      <img src="Images/einstein.jpeg" width="120px"><br>
       <b>CAMARA Guy Mari Mohamed</b><br>
       Développeur
     </td>
     <td align="center">
-      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/serge.jpeg?raw=true" width="120px"><br>
+      <img src="Images/serge.jpeg" width="120px"><br>
       <b>CHAOLD Komi Serge</b><br>
       Développeur / UI
     </td>
     <td align="center">
-      <img src="https://github.com/rovana-0412/PROJET_BIDE/blob/main/images/cedric.jpg?raw=true" width="120px"><br>
+      <img src="Images/cedric.jpg" width="120px"><br>
       <b>APETOH Yannick-Eudes Cédric</b><br>
       Développeur
     </td>
   </tr>
 </table>
-
 | Durée du projet | 17/08/2026 → 24/08/2026 |
 | Stack technique | Bootstrap 5.3, JavaScript (vanilla ES6+), HTML5, CSS3, Git / GitHub |
 | Gestion de projet | Trello |

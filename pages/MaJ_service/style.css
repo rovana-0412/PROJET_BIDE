@@ -355,3 +355,9 @@ body {
   border: 40px solid rgba(255, 77, 46, 0.12);
   pointer-events: none;
 }
+
+/* Footer - Sous-titre en blanc pur */
+.footer-subtitle {
+    color: #FFFFFF !important;
+    opacity: 1;
+}

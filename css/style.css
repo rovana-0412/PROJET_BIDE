@@ -1857,3 +1857,8 @@ body {
     }
 }
 
+/* Footer - Sous-titre en blanc pur */
+.footer-subtitle {
+    color: #FFFFFF !important;
+    opacity: 1;
+}

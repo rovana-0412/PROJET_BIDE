@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+# Activation de l'optimisation des assets
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.css]
+  minify = true
+
+[build.processing.js]
+  minify = true
+
+# Mise en cache des images pour 1 an
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Mise en cache du CSS et JS
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
